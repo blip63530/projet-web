@@ -9,7 +9,7 @@
     <title>Projet web</title>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <header class="header-section">
         <div class="container">
             <!-- logo -->
@@ -116,7 +116,7 @@
     <!-- Fin de la Section du profile -->
 
 
-    <footer class="footer-section">
+    <footer class="footer-section mt-auto">
         <div class="container">
             <ul class="footer-menu">
                 <li><a href="index.php">Accueil</a></li>
