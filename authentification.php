@@ -35,44 +35,36 @@
 
     <section class="h-100 gradient-custom-2">
         <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col col-lg-9 col-xl-7">
-                    <div class="card">
-                        <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
-    
-                            <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
-                                <img src="img\gamer.png" alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2" style="width: 150px; z-index: 1">
-                                <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;">
-                                    Modifier mon profile
-                                </button>
-                            </div>
-                            <div class="ms-3" style="margin-top: 130px;">
-                                <h5>Random dude</h5>
-                                <p>Limoges</p>
-                            </div>
-                        </div>
-                        <div class="p-4 text-black" style="background-color: #f8f9fa;">
-                            <div class="d-flex justify-content-end text-center py-1">
-                                <div class="user-panel">
-                                    <a href="#">Envoyer un message</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body p-4 text-black">
+            <div class="col col-lg-2 col-xl-7">
+                <div class="card">
+                    <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:330px;">
+                        <div class="card-body p-6 text-black">
                             <div class="mb-5">
-                                <p class="lead fw-normal mb-1">A propos</p>
-                                <div class="p-4" style="background-color: #f8f9fa;">
-                                    <p class="font-italic mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <div class="p-3" style="background-color: #f8f9fa;">
+                                    <form action="/action_page.php">
+                                        <div class="mb-3 mt-3">
+                                            <label for="email" class="form-label">Nom d'utilisateur:</label>
+                                            <input type="email" class="form-control" id="IdName" placeholder="Entrez votre identifiant" name="IdName">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="pwd" class="form-label">Mot de passe:</label>
+                                            <input type="password" class="form-control" id="pwd" placeholder="Entrez votre mot de passe" name="pswd">
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox" name="remember"> Se souvenir de moi
+                                            </label>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Se connecter</button>
+                                    </form>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mb-4">
-                                <p class="lead fw-normal mb-0">Records</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 
