@@ -1,106 +1,153 @@
 body {
-	height: 100%;
-	font-family: 'Roboto', sans-serif;
-	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
 }
 
 img {
-	max-width: 100%;
+    max-width: 100%;
 }
 
 ul,
 ol {
-	padding: 0;
-	margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 /* -----------------------------------------------HEADER---------------------------------------------------------- */
 
 .header-section {
-	background: #131313;
-	clear: both;
-	overflow: hidden;
-	padding: 18px 0;
-	border-bottom: 1px solid #ffb320;
+    background: #131313;
+    clear: both;
+    overflow: hidden;
+    padding: 18px 0;
+    border-bottom: 1px solid #ffb320;
 }
 
 .site-logo {
-	display: inline-block;
-	float: left;
-	padding-top: 6px;
+    display: inline-block;
+    float: left;
+    padding-top: 6px;
 }
 
 .user-panel {
-	float: right;
-	font-weight: 500;
-	background: #ffb320;
-	padding: 8px 28px;
-	border-radius: 30px;
+    float: right;
+    font-weight: 500;
+    background: #ffb320;
+    padding: 8px 28px;
+    border-radius: 30px;
 }
 
 .user-panel a {
-	font-size: 14px;
-	color: #131313;
+    font-size: 14px;
+    color: #131313;
     text-decoration: none;
 }
 
 .main-menu {
-	float: right;
-	margin-right: 170px;
+    float: right;
+    margin-right: 170px;
 }
 
 .main-menu ul {
-	list-style: none;
+    list-style: none;
 }
 
 .main-menu ul li {
-	display: inline;
+    display: inline;
 }
 
 .main-menu ul li a {
-	display: inline-block;
-	font-size: 16px;
-	color: #fff;
-	margin-left: 35px;
-	font-weight: 500;
-	padding: 10px 5px;
+    display: inline-block;
+    font-size: 16px;
+    color: #fff;
+    margin-left: 35px;
+    font-weight: 500;
+    padding: 10px 5px;
     text-decoration: none;
 }
 
 .main-menu ul li a:hover {
-	color: #ffb320;
+    color: #ffb320;
 }
 
-/* -----------------------------------------------FIN DU HEADER---------------------------------------------------------- */
+/* -----------------------------------------------FOOTER---------------------------------------------------------- */
 
 
 .footer-section {
-	padding: 18px 0 16px;
-	overflow: hidden;
-	background: #252525;
+    padding: 18px 0 16px;
+    overflow: hidden;
+    background: #252525;
 }
 
 .footer-menu {
-	list-style: none;
-	float: right;
+    list-style: none;
+    float: right;
 }
 
 .footer-menu li {
-	display: inline;
+    display: inline;
 }
 
 .footer-menu li a {
-	display: inline-block;
-	font-size: 14px;
-	font-weight: 500;
-	color: #aeaeae;
-	margin-left: 30px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #aeaeae;
+    margin-left: 30px;
 }
 
 .copyright {
-	float: left;
-	margin-bottom: 0;
-	font-weight: 500;
-	color: #aeaeae;
+    float: left;
+    margin-bottom: 0;
+    font-weight: 500;
+    color: #aeaeae;
 }
+
+/* -----------------------------------------------PAGE PROFILE---------------------------------------------------------- */
+
+.content-info {
+    background: #f9f9f9;
+    padding: 40px 0;
+    background-size: cover !important;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+table {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #dedede;
+}
+
+table thead tr th {
+    padding: 20px;
+    border: 1px solid #dedede;
+    color: #000;
+}
+
+table.table-striped tbody tr:nth-of-type(odd) {
+    background: #f9f9f9;
+}
+
+
+
+.text-left {
+    text-align: left !important;
+}
+
+table tr td {
+    padding: 10px 20px;
+    border: 1px solid #dedede;
+}
+
+
+
+table tr td {
+    padding: 10px 40px;
+    border: 1px solid #dedede;
+}
+
