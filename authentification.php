@@ -43,8 +43,8 @@
                                 <div class="p-3" style="background-color: #f8f9fa;">
                                     <form action="/action_page.php">
                                         <div class="mb-3 mt-3">
-                                            <label for="email" class="form-label">Nom d'utilisateur:</label>
-                                            <input type="email" class="form-control" id="IdName" placeholder="Entrez votre identifiant" name="IdName">
+                                            <label for="username" class="form-label">Nom d'utilisateur:</label>
+                                            <input type="username" class="form-control" id="IdName" placeholder="Entrez votre identifiant" name="IdName">
                                         </div>
                                         <div class="mb-3">
                                             <label for="pwd" class="form-label">Mot de passe:</label>

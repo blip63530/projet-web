@@ -3,7 +3,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <link rel="stylesheet" href="index.css">
 
-
 <head>
     <meta charset="UTF-8">
     <title>Projet web</title>
@@ -117,26 +116,7 @@
 
 
     <?php
-
-    $servername = "82.65.68.131"; // Nom de l'hôte MySQL
-    $username = "roe121"; // Nom d'utilisateur MySQL
-    $password = "Mmmttt1600"; // Mot de passe MySQL
-    $dbname = "projet-web"; // Nom de la base de données
-
-    // Établir une connexion à la base de données MySQLi
-    $conn = new mysqli($servername, $username, $password, $dbname, 3306);
-
-    // Vérifier la connexion
-    if ($conn->connect_error) {
-        die("Erreur de connexion : " . $conn->connect_error);
-    } else {
-        echo "Connexion à la base de données réussie.";
-    }
-
-    // Vous pouvez maintenant exécuter des requêtes MySQL en utilisant cette connexion $conn.
-
-    // Fermer la connexion lorsque vous avez terminé
-    $conn->close();
+    include 'connectionDB.php';
 
     ?>
 
