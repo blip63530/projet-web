@@ -118,13 +118,13 @@
 
     <?php
 
-    $servername = "192.168.1.202:3306"; // Nom de l'hôte MySQL
+    $servername = "192.168.1.202"; // Nom de l'hôte MySQL
     $username = "roe121"; // Nom d'utilisateur MySQL
     $password = "Mmmttt1600"; // Mot de passe MySQL
     $dbname = "projet-web"; // Nom de la base de données
 
     // Établir une connexion à la base de données MySQLi
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $username, $password, $dbname, 3306);
 
     // Vérifier la connexion
     if ($conn->connect_error) {
