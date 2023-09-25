@@ -12,7 +12,7 @@
     <header class="header-section">
         <div class="container">
             <!-- logo -->
-            <a class="site-logo" href="index.php">
+            <a class="site-logo" href="../index.php">
                 <img src="img\lgg.png" alt="">
             </a>
             <div class="user-panel">
@@ -22,7 +22,7 @@
             <!--  menu site -->
             <nav class="main-menu">
                 <ul>
-                    <li><a href="index.php">Accueil</a></li>
+                    <li><a href="../index.php">Accueil</a></li>
                     <li><a href="jeux.php">Jeux</a></li>
                     <li><a href="classements.php">Classements</a></li>
                     <li><a href="contact.php">Contact</a></li>
@@ -72,7 +72,7 @@
     <footer class="footer-section mt-auto">
         <div class="container">
             <ul class="footer-menu">
-                <li><a href="index.php">Accueil</a></li>
+                <li><a href="../index.php">Accueil</a></li>
                 <li><a href="jeux.php">Jeux</a></li>
                 <li><a href="classement.php">Classements</a></li>
                 <li><a href="contact.php">Contact</a></li>
