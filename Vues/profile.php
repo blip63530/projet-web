@@ -4,9 +4,8 @@
 <link rel="stylesheet" href="index.css">
 
 <?PHP 
-$component = PHP_URL_QUERY ;
-$curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1); 
-$query = parse_url($curPageName,$component);
+$curPageName = $_SERVER['HTTP_REFERER'];
+$query = parse_url($curPageName);
 parse_str($query,$id);
 
 ?>
