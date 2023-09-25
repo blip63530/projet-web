@@ -1,6 +1,6 @@
 <?php
 // Fichier de configuration contenant les informations de connexion
-include 'config.php';
+include 'loginDB.php';
 
 function connectDB() {
     global $servername, $username, $password, $dbname;
