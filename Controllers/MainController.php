@@ -1,22 +1,33 @@
 <?php
 
 class MainController{
+    private function genererPage($data){
+        extract($data);
+        ob_start();
+        require_once ($view);
+        $page_content = ob_get_clean();
+        require_once ($template);
+    }
     public function accueil(){
-        $page_description = "";
-        $page_title = "";
-        ob_start();
-        require_once("./views/accueil.php");
-        $page_content = ob_get_clean();
+        $data_page = [
+            "page_description"=>"description de la page",
+            "page_title" => "titre de la page",
+            "view"=> "./views/acceuil.php",
+            "template"=>"./views/common/template.php"
+        ];
+        $this->genererPage($data_page);
+    }
 
-    }
-    
     public function authentification(){
-        $page_description = "";
-        $page_title = "";
-        ob_start();
-        require_once("./views/authentification.php");
-        $page_content = ob_get_clean();
+        $data_page = [
+            "page_description"=>"description de la page",
+            "page_title" => "titre de la page",
+            "view"=> "./views/authentification.php",
+            "template"=>"./views/common/template.php"
+        ];
+        $this->genererPage($data_page);
     }
+
     
     public function inscription(){
         $page_description = "";

@@ -18,9 +18,15 @@ try {
         case "acceuil":
             $mainController->accueil();
             break;
+        case "authentification":
+            $mainController->authentification();
+            break;
         default :
             throw new Exeption("la page n'existe pas");
     }
+
+
+
 } catch (Exeption $e){
     $page_description="page de generation d'erreur";
     $page_title = "page d'erreur";

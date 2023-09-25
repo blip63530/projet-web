@@ -27,13 +27,13 @@
             <img src="img\lgg.png" alt="">
         </a>
         <div class="user-panel">
-            <a href="authentification.php">Se connecter</a> / <a href="#">Inscription</a>
+            <a class="nav-link " href ="authentification">Se connecter</a> / <a href="#">Inscription</a>
         </div>
 
         <!--  menu site -->
         <nav class="main-menu">
             <ul>
-                <li><a href="../index.php">Accueil</a></li>
+                <li><a href="acceuil">Accueil</a></li>
                 <li><a href="jeux.php">Jeux</a></li>
                 <li><a href="classements.php">Classements</a></li>
                 <li><a href="contact.php">Contact</a></li>
