@@ -35,44 +35,34 @@
 
     <section class="h-100 gradient-custom-2">
         <div class="container py-5 h-100">
-            <div class="col col-lg-2 col-xl-7">
-                <div class="card">
-                    <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:510px;">
-                        <div class="card-body p-6 text-black">
-                            <div class="mb-5">
-                                <div class="p-3" style="background-color: #f8f9fa;">
-                                    <form action="/action_page.php">
-                                        <div class="mb-3 mt-3">
-                                            <label for="username" class="form-label">Nom d'utilisateur:</label>
-                                            <input type="username" class="form-control" id="IdName" placeholder="Entrez votre identifiant" name="IdName">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="pwd" class="form-label">Mot de passe:</label>
-                                            <input type="password" class="form-control" id="pwd" placeholder="Entrez votre mot de passe" name="pswd">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="pwd" class="form-label">Réécrivez votre Mot de passe:</label>
-                                            <input type="password" class="form-control" id="pwdcheck" placeholder="Entrez votre mot de passe" name="pswdcheck">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="mail" class="form-label">Mail:</label>
-                                            <input type="email" class="form-control" id="mail" placeholder="Entrez votre mail" name="mail">
-                                        </div>
-                                        <div class="form-check mb-3">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="remember"> Se souvenir de moi
-                                            </label>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Se connecter</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mb-4">
-                            </div>
-                        </div>
+            <div class="p-3" style="background-color: #f8f9fa;">
+                <form action="/action_page.php">
+                    <div class="mb-3 mt-3">
+                        <label for="Username" class="form-label">Nom d'utilisateur:</label>
+                        <input type="username" class="form-control" id="Username" placeholder="Entrez votre identifiant" name="IdName" autocomplete="username">
                     </div>
-                </div>
+                    <div class="mb-3">
+                        <label for="pwd" class="form-label">Mot de passe:</label>
+                        <input type="password" class="form-control" id="pwd" placeholder="Entrez votre mot de passe" name="pswd">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pwd" class="form-label">Réécrivez votre Mot de passe:</label>
+                        <input type="password" class="form-control" id="pwdcheck" placeholder="Entrez votre mot de passe" name="pswdcheck">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mail" class="form-label">Mail:</label>
+                        <input type="email" class="form-control" id="mail" placeholder="Entrez votre mail" name="mail" autocomplete="email">
+                    </div>
+                    <div class="form-check mb-3">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" name="remember"> Se souvenir de moi
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Se connecter</button>
+                </form>
             </div>
+
+
         </div>
     </section>
 

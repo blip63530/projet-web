@@ -3,6 +3,13 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <link rel="stylesheet" href="index.css">
 
+<?PHP 
+$component = PHP_URL_QUERY ;
+$curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1); 
+$query = parse_url($curPageName,$component);
+parse_str($query,$id);
+
+?>
 <head>
     <meta charset="UTF-8">
     <title>Projet web</title>
@@ -47,7 +54,7 @@
                                 </button>
                             </div>
                             <div class="ms-3" style="margin-top: 130px;">
-                                <h5>Random dude</h5>
+                                <h5><?php echo $id['IdName'];  ?></h5>
                                 <p>Limoges</p>
                             </div>
                         </div>
