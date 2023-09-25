@@ -1,20 +1,31 @@
 <?php
-    $LoginFile = 'loginDB.php';
-    include $LoginFile;
+// Fichier de configuration contenant les informations de connexion
+include 'config.php';
 
+function connectDB() {
+    global $servername, $username, $password, $dbname;
 
-    // Établir une connexion à la base de données MySQLi
-    $conn = new mysqli($servername, $username, $password, $dbname, 3306);
+    try {
+        // Connexion à la base de données
+        $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-    // Vérifier la connexion
-    if ($conn->connect_error) {
-        die("Erreur de connexion : " . $conn->connect_error);
-    } else {
-        echo "Connexion à la base de données réussie.";
+        // Configuration de PDO pour générer des exceptions en cas d'erreur
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo "Connexion à la base de données réussie. :) :) :) :) :) :) :)";
+        return $pdo;
+    } catch (PDOException $e) {
+        // En cas d'erreur de connexion, affichez le message d'erreur
+        echo "NOOOOOT CONNEECTEEEED :( :( :( :( :( :( ";
+        die("Erreur de connexion : " . $e->getMessage());
     }
+}
 
-    // Vous pouvez maintenant exécuter des requêtes MySQL en utilisant cette connexion $conn.
+// Appel de la fonction de connexion
+$pdo = connectDB();
 
-    // Fermer la connexion lorsque vous avez terminé
-    $conn->close();
+// Vous pouvez maintenant utiliser $pdo pour exécuter des requêtes SQL
+// Par exemple : $pdo->query("SELECT * FROM ma_table");
+
+// Fermez la connexion lorsque vous avez terminé
+$pdo = null;
 ?>
