@@ -116,6 +116,30 @@
     <!-- Fin de la Section du profile -->
 
 
+    <?php
+
+    $servername = "192.168.1.202:3306"; // Nom de l'hôte MySQL
+    $username = "roe121"; // Nom d'utilisateur MySQL
+    $password = "Mmmttt1600"; // Mot de passe MySQL
+    $dbname = "projet-web"; // Nom de la base de données
+
+    // Établir une connexion à la base de données MySQLi
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Vérifier la connexion
+    if ($conn->connect_error) {
+        die("Erreur de connexion : " . $conn->connect_error);
+    } else {
+        echo "Connexion à la base de données réussie.";
+    }
+
+    // Vous pouvez maintenant exécuter des requêtes MySQL en utilisant cette connexion $conn.
+
+    // Fermer la connexion lorsque vous avez terminé
+    $conn->close();
+
+    ?>
+
     <footer class="footer-section mt-auto">
         <div class="container">
             <ul class="footer-menu">
