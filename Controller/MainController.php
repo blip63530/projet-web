@@ -5,7 +5,7 @@ class MainController{
         $page_description = "";
         $page_title = "";
         ob_start();
-        require_once("./Vues/accueil.php");
+        require_once("./views/accueil.php");
         $page_content = ob_get_clean();
 
     }
@@ -14,7 +14,7 @@ class MainController{
         $page_description = "";
         $page_title = "";
         ob_start();
-        require_once("./Vues/authentification.php");
+        require_once("./views/authentification.php");
         $page_content = ob_get_clean();
     }
     
@@ -23,7 +23,7 @@ class MainController{
         $page_title = "";
         $page_content = 
         ob_start();
-        require_once("./Vues/inscription.php");
+        require_once("./views/inscription.php");
         $page_content = ob_get_clean();
     }
     
@@ -31,7 +31,7 @@ class MainController{
         $page_description = "";
         $page_title = "";
         ob_start();
-        require_once("./Vues/profile.php");
+        require_once("./views/profile.php");
         $page_content = ob_get_clean();
     }
 }
