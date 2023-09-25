@@ -2,7 +2,7 @@
 <html lang="en">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="../index.css">
 
 <head>
     <meta charset="UTF-8">
@@ -23,7 +23,7 @@
 <header class="header-section">
     <div class="container">
         <!-- logo -->
-        <a class="site-logo" href="index.php">
+        <a class="site-logo" href="../index.php">
             <img src="img\lgg.png" alt="">
         </a>
         <div class="user-panel">
@@ -33,7 +33,7 @@
         <!--  menu site -->
         <nav class="main-menu">
             <ul>
-                <li><a href="index.php">Accueil</a></li>
+                <li><a href="../index.php">Accueil</a></li>
                 <li><a href="jeux.php">Jeux</a></li>
                 <li><a href="classements.php">Classements</a></li>
                 <li><a href="contact.php">Contact</a></li>
@@ -47,10 +47,10 @@
 <h2 class="w3-center">Jeux</h2>
 
 <div class="w3-content w3-display-container">
-    <img class="mySlides" src="img/index/ex1.jpg" style="width:100%">
-    <img class="mySlides" src="img/index/ex2.jpg" style="width:100%">
-    <img class="mySlides" src="img/index/ex3.jpg" style="width:100%">
-    <img class="mySlides" src="img/index/ex1.jpg" style="width:100%">
+    <img class="mySlides" src="../img/index/ex1.jpg" style="width:100%">
+    <img class="mySlides" src="../img/index/ex2.jpg" style="width:100%">
+    <img class="mySlides" src="../img/index/ex3.jpg" style="width:100%">
+    <img class="mySlides" src="../img/index/ex1.jpg" style="width:100%">
 
     <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
     <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
@@ -98,7 +98,7 @@
 <footer class="footer-section">
     <div class="container">
         <ul class="footer-menu">
-            <li><a href="index.php">Accueil</a></li>
+            <li><a href="../index.php">Accueil</a></li>
             <li><a href="jeux.php">Jeux</a></li>
             <li><a href="classement.php">Classements</a></li>
             <li><a href="contact.php">Contact</a></li>
