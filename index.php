@@ -21,6 +21,7 @@ try {
         case "authentification":
             $mainController->authentification();
             break;
+
         default :
             throw new Exeption("la page n'existe pas");
     }
