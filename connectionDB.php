@@ -20,6 +20,41 @@ function connectDB() {
     }
 }
 
+function inscription($nom,$mail,$pw)
+{
+    try {
+    $pdo = connectDB();
+    $sql = $pdo->prepare("INSERT INTO Comptes(Name,Mail,PW)
+    VALUES (:nom,:mail,:pw)");
+    $sql->bindParam(':pw',$pw);
+    $sql->bindParam(':name',$name);
+    $sql->bindParam(':mail',$mail);
+    $pdo->exec($sql);
+     echo "New record created successfully";
+    } catch(PDOException $e) {
+         echo $sql . "<br>" . $e->getMessage();
+    }
+
+    $pdo=null;
+}
+function connection($nom, $pw)
+{
+    try{
+    $pdo = connectDB();
+    $sql = $pdo->prepare("SELECT * FROM Comptes() WHERE PW = :pw AND Name = :name");
+    $sql->bindParam(':pw',$pw);
+    $sql->bindParam(':name',$name);
+    $pdo->exec($sql);
+     echo "New record created successfully";
+    } catch(PDOException $e) {
+         echo $sql . "<br>" . $e->getMessage();
+    }
+
+    $pdo=null;
+}
+
+
+
 // Appel de la fonction de connexion
 $pdo = connectDB();
 
