@@ -23,12 +23,12 @@ try {
             break;
 
         default :
-            throw new Exeption("la page n'existe pas");
+            throw new Exception("la page n'existe pas");
     }
 
 
 
-} catch (Exeption $e){
+} catch (Exception $e){
     $page_description="page de generation d'erreur";
     $page_title = "page d'erreur";
     $page_content = $e->getMessage();
