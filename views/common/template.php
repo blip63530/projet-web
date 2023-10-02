@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<?php require_once ("views/acceuil.php");?>
+<!--<php require_once ("views/acceuil.php");?>-->
 <?=$page_content;?>
 
 </body>
