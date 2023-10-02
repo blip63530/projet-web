@@ -20,27 +20,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 
-<header class="header-section">
-    <div class="container">
-        <!-- logo -->
-        <a class="site-logo" href="../index.php">
-            <img src="img\lgg.png" alt="">
-        </a>
-        <div class="user-panel">
-            <a class="nav-link " href ="authentification">Se connecter</a> / <a href="#">Inscription</a>
-        </div>
-
-        <!--  menu site -->
-        <nav class="main-menu">
-            <ul>
-                <li><a href="acceuil">Accueil</a></li>
-                <li><a href="jeux.php">Jeux</a></li>
-                <li><a href="classements.php">Classements</a></li>
-                <li><a href="contact.php">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
 
 <!-- slideshow -->
 
@@ -95,19 +74,6 @@
 
 
 
-<footer class="footer-section">
-    <div class="container">
-        <ul class="footer-menu">
-            <li><a href="../index.php">Accueil</a></li>
-            <li><a href="jeux.php">Jeux</a></li>
-            <li><a href="classement.php">Classements</a></li>
-            <li><a href="contact.php">Contact</a></li>
-        </ul>
-        <p class="copyright">
-            Copyright ©2023 All rights reserved
 
-        </p>
-    </div>
-</footer>
 </body>
 </html>
