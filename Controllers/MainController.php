@@ -10,8 +10,8 @@ class MainController{
     }
     public function accueil(){
         $data_page = [
-            "page_description"=>"description de la page",
-            "page_title" => "titre de la page",
+            "page_description"=>"page d'acceuil",
+            "page_title" => "acceuil",
             "view"=> "./views/acceuil.php",
             "template"=>"./views/common/template.php"
         ];
