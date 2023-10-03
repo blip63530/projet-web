@@ -1,8 +1,12 @@
+
+<p>
+    ddddd
+</p>
 <?php
 require_once ("./controllers/MainController.php");
 $mainController = new MainController();
 
-echo ('dddd');
+
 
 
 try {
