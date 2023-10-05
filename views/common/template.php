@@ -11,37 +11,16 @@
 
 </head>
 
-<!--header-->
-
-<header class="header-section">
-    <div class="container">
-        <!-- logo -->
-        <a class="site-logo" href="index.php?page=acceuil">
-            <img src="img\lgg.png" alt="">
-        </a>
-        <div class="user-panel">
-            <a class="nav-link " href ="index.php?page=authentification">Se connecter</a> / <a href="index.php?page=inscription">Inscription</a>
-        </div>
-
-        <!--  menu site -->
-        <nav class="main-menu">
-            <ul>
-                <li><a href="acceuil">Accueil</a></li>
-                <div class="dropdown">
-                    <button class="dropbtn">Jeux</button>
-                    <div class="dropdown-content">
-                        <a href="index.php?page=floppy">floppy</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                </div>
-                <li><a href="classements.php">Classements</a></li>
-                <li><a href="index.php?page=contact">Contact</a></li>
-            </ul>
-        </nav>
+<?php require_once("views/common/header.php"); ?>
+<!-- Gestion et création de la session -->
+<?php if(!empty($_SESSION['alert'])) : ?>
+    <div class="alert <?= $_SESSION['alert']['type']; ?>" role="alert">
+        <?= $_SESSION['alert']['message']; ?>
     </div>
-</header>
-
+<?php
+    unset($_SESSION['alert']);
+endif;
+?>
 
 
 
@@ -58,21 +37,6 @@
 
 </body>
 
-
-<!-- footer -->
-<footer class="footer-section mt-auto">
-    <div class="container">
-        <ul class="footer-menu">
-            <li><a href="../index.php">Accueil</a></li>
-            <li><a href="jeux.php">Jeux</a></li>
-            <li><a href="classement.php">Classements</a></li>
-            <li><a href="contact.php">Contact</a></li>
-        </ul>
-        <p class="copyright">
-            Copyright ©2023 All rights reserved
-
-        </p>
-    </div>
-</footer>
+<?php require_once("views/common/footer.php"); ?>
 
 </html>

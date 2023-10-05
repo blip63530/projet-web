@@ -1,6 +1,10 @@
 <?php
-
+    require_once("./models/MainManager.php");
 class MainController{
+    private $mainManager;
+    public function __construct(){
+        $this->mainManager = new MainManager();
+    }
     private function genererPage($data){
         extract($data);
         ob_start();
@@ -9,10 +13,16 @@ class MainController{
         require_once ($template);
     }
     public function accueil(){
+        $datas = $this->mainManager->getDataX();
+        $_SESSION['alert'] = [
+            "message" => "message",
+            "type" => "alert-danger"
+        ];
         $data_page = [
             "page_description"=>"page d'acceuil",
             "page_title" => "acceuil",
             "view"=> "./views/acceuil.php",
+            "datas" => $datas,
             "template"=>"./views/common/template.php"
         ];
         $this->genererPage($data_page);

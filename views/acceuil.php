@@ -23,7 +23,7 @@
 
 <!-- slideshow -->
 
-<h2 class="w3-center">Jeux</h2>
+<h2 class="w3-center">Bienvenue, <?php echo $datas["name"]; ?></h2>
 
 <div class="w3-content w3-display-container">
     <img class="mySlides" src="img/index/ex1.jpg" style="width:100%">
