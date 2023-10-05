@@ -23,7 +23,6 @@ ol {
     overflow: hidden;
     padding: 18px 0;
     border-bottom: 1px solid #ffb320;
-    z-index: 100;
 }
 
 .site-logo {
@@ -193,7 +192,11 @@ table tr td {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;z-index: 3;}
+.dropdown-content a:hover {
+    background-color: #ddd;
+    display: block;
+    position: absolute;
+}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;
@@ -210,3 +213,30 @@ table tr td {
 .page_content {
     z-index: 1;
 }
+
+/* -----------------------------------------------FLOPPY---------------------------------------------------------- */
+/*
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+bodyfloppy {
+    margin: 0;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    user-select: none;
+}
+headerfloppy {
+    margin: 0 auto;
+    width: 431px;
+}
+h1floppy {
+    background: url("https://i.ibb.co/Q9yv5Jk/flappy-bird-set.png") 0% 340px;
+    padding: 1.2rem 0;
+    margin: 0;
+}
+.score-containerfloppy {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 6px;
+    background: #5EE270;
+}*/

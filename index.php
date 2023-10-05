@@ -1,11 +1,6 @@
 
 
 <?php
-define('BaseDir', getcwd());
-
-/*echo BaseDir.'/Controllers/MainController.php' ;
-require_once (BaseDir."/Controllers/MainController.php");
-*/
 require_once("./Controllers/MainController.php");
 $mainController = new MainController();
 
@@ -31,6 +26,10 @@ try {
         case "contact":
             $mainController->contact();
             break;
+        case "floppy":
+            $mainController->floppy();
+            break;
+
         default:
             throw new Exception("la page n'existe pas");
     }

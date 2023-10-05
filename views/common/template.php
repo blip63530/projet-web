@@ -28,9 +28,9 @@
             <ul>
                 <li><a href="acceuil">Accueil</a></li>
                 <div class="dropdown">
-                    <button class="dropbtn">Dropdown</button>
+                    <button class="dropbtn">jeux</button>
                     <div class="dropdown-content">
-                        <a href="#">Link 1</a>
+                        <a href="index.php?page=floppy">floppy</a>
                         <a href="#">Link 2</a>
                         <a href="#">Link 3</a>
                     </div>
