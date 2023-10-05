@@ -3,9 +3,10 @@
 <?php
 define('BaseDir', getcwd());
 
-echo BaseDir.'/Controllers/MainController.php' ;
+/*echo BaseDir.'/Controllers/MainController.php' ;
 require_once (BaseDir."/Controllers/MainController.php");
-
+*/
+require_once ("./Controllers/MainController.php");
 $mainController = new MainController();
 
 
