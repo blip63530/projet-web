@@ -7,7 +7,7 @@ echo "hello" ;
 ?>
 <?php
 
-require_once ("./controllers/MainController.php");
+require_once ("controllers/MainController.php");
 $mainController = new MainController();
 
 
