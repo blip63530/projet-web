@@ -27,6 +27,14 @@
         <nav class="main-menu">
             <ul>
                 <li><a href="acceuil">Accueil</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn">Dropdown</button>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
                 <li><a href="jeux.php">Jeux</a></li>
                 <li><a href="classements.php">Classements</a></li>
                 <li><a href="contact.php">Contact</a></li>
@@ -44,7 +52,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 <!--<php require_once ("views/acceuil.php");?>-->
-<?=$page_content;?>
+<div class="page_content">
+    <?=$page_content;?>
+</div>
+
 
 </body>
 
