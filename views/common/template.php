@@ -20,7 +20,7 @@
             <img src="img\lgg.png" alt="">
         </a>
         <div class="user-panel">
-            <a class="nav-link " href ="index.php?page=authentification">Se connecter</a> / <a href="index.php?page=inscrption">Inscription</a>
+            <a class="nav-link " href ="index.php?page=authentification">Se connecter</a> / <a href="index.php?page=inscription">Inscription</a>
         </div>
 
         <!--  menu site -->
