@@ -1,8 +1,10 @@
 
 
 <?php
+define('BaseDir', getcwd());
 
-require_once ("controllers/MainController.php");
+var_dump(BaseDir);
+require_once (BaseDir.'controllers/MainController.php');
 echo "hello" ;
 $mainController = new MainController();
 
