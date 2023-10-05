@@ -28,6 +28,15 @@ class MainController{
         $this->genererPage($data_page);
     }
 
+    public function floppy(){
+        $data_page =[
+            "page_description"=>"un super jeu pour devenir fou",
+            "page_title" => "floppy bird",
+            "view"=> "./views/floppy.php",
+            "template"=>"./views/common/template.php"
+        ];
+        $this->genererPage($data_page);
+    }
     
     public function inscription(){
         $page_description = "";
