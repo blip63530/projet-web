@@ -1,8 +1,9 @@
 
 
 <?php
-echo "hello" ;
+
 require_once ("controllers/MainController.php");
+echo "hello" ;
 $mainController = new MainController();
 
 
