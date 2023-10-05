@@ -28,14 +28,13 @@
             <ul>
                 <li><a href="acceuil">Accueil</a></li>
                 <div class="dropdown">
-                    <button class="dropbtn">jeux</button>
+                    <button class="dropbtn">Jeux</button>
                     <div class="dropdown-content">
                         <a href="index.php?page=floppy">floppy</a>
                         <a href="#">Link 2</a>
                         <a href="#">Link 3</a>
                     </div>
                 </div>
-                <li><a href="jeux.php">Jeux</a></li>
                 <li><a href="classements.php">Classements</a></li>
                 <li><a href="index.php?page=contact">Contact</a></li>
             </ul>

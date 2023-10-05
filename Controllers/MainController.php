@@ -39,20 +39,22 @@ class MainController{
     }
     
     public function inscription(){
-        $page_description = "";
-        $page_title = "";
-        $page_content = 
-        ob_start();
-        require_once("./views/inscription.php");
-        $page_content = ob_get_clean();
+        $data_page =[
+            "page_description"=>"Page d'inscription",
+            "page_title" => "inscription",
+            "view"=> "./views/inscription.php",
+            "template"=>"./views/common/template.php"
+        ];
+        $this->genererPage($data_page);
     }
     
     public function profile(){
-        $page_description = "";
-        $page_title = "";
-        ob_start();
-        require_once("./views/profile.php");
-        $page_content = ob_get_clean();
+        $data_page =[
+            "page_description"=>"Page du profil",
+            "page_title" => "profile",
+            "view"=> "./views/profile.php",
+            "template"=>"./views/common/template.php"
+        ];
     }
 
     public function contact(){

@@ -23,6 +23,13 @@ try {
         case "authentification":
             $mainController->authentification();
             break;
+        case "inscription":
+            $mainController->inscription();
+           break;
+
+        case "profile":
+            $mainController->profile();
+            break;
         case "contact":
             $mainController->contact();
             break;
