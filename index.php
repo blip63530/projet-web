@@ -3,6 +3,10 @@
     ddddd
 </p>
 <?php
+echo "hello" ;
+?>
+<?php
+
 require_once ("./controllers/MainController.php");
 $mainController = new MainController();
 
