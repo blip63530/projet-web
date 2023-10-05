@@ -6,7 +6,7 @@ define('BaseDir', getcwd());
 /*echo BaseDir.'/Controllers/MainController.php' ;
 require_once (BaseDir."/Controllers/MainController.php");
 */
-require_once ("./Controllers/MainController.php");
+require_once("./Controllers/MainController.php");
 $mainController = new MainController();
 
 
@@ -28,15 +28,14 @@ try {
         case "authentification":
             $mainController->authentification();
             break;
-
-        default :
+        case "contact":
+            $mainController->contact();
+            break;
+        default:
             throw new Exception("la page n'existe pas");
     }
-
-
-
-} catch (Exception $e){
-    $page_description="page de generation d'erreur";
+} catch (Exception $e) {
+    $page_description = "page de generation d'erreur";
     $page_title = "page d'erreur";
     $page_content = $e->getMessage();
 }
@@ -45,5 +44,4 @@ try {
 $page_title="titre de la page";
 $page_content="";*/
 
-require_once ("views/common/template.php");
-
+require_once("views/common/template.php");

@@ -45,4 +45,14 @@ class MainController{
         require_once("./views/profile.php");
         $page_content = ob_get_clean();
     }
+
+    public function contact(){
+        $data_page = [
+            "page_description"=>"page de contact",
+            "page_title" => "contact",
+            "view"=> "./views/contact.php",
+            "template"=>"./views/common/template.php"
+        ];
+        $this->genererPage($data_page);
+    }
 }
