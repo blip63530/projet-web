@@ -1,8 +1,8 @@
 
 
 <?php
-require_once("./Controllers/MainController.php");
-$mainController = new MainController();
+require_once("./controllers/visitorController.php");
+$visitorController = new visitorController();
 
 
 
@@ -18,23 +18,23 @@ try {
 
     switch ($page) {
         case "acceuil":
-            $mainController->accueil();
+            $visitorController->accueil();
             break;
         case "authentification":
-            $mainController->authentification();
+            $visitorController->authentification();
             break;
         case "inscription":
-            $mainController->inscription();
+            $visitorController->inscription();
            break;
 
         case "profile":
-            $mainController->profile();
+            $visitorController->profile();
             break;
         case "contact":
-            $mainController->contact();
+            $visitorController->contact();
             break;
         case "floppy":
-            $mainController->floppy();
+            $visitorController->floppy();
             break;
 
         default:
