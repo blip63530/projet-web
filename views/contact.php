@@ -8,22 +8,24 @@
     <title>Projet web</title>
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<section id="contact" class="contact">
+     <div class="form" data-aos="fade-up">
+        <strong> N'hésitez pas à nous contacter </strong>
+        <input type="text" placeholder="Nom et Prenom">
+        <input type="email" placeholder="Email">
+        <textarea  cols="30" rows="4" placeholder="Message"></textarea>
+        <button>Envoyer un message</button>
+      </div>
 
+     <div class="map" data-aos="fade-up">
+       <strong>Ou vous pouvez nous trouver</strong>
+       <p><i class="fa fa-map-marker"></i> 43 Rue de Sainte-Anne, 87000 Limoges </p>
+       <div class="line"></div>
 
-    <!-- Section du profile -->
-
-    <section class="h-100 gradient-custom-2">
-   <p>test</p>
-   <img class="mySlides" src="Projet-Web\projet-web\img\index\ex3.jpg" style="width:100%">
+       
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.61841942169!2d1.269013275993885!3d45.818899909703205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f933617de8c327%3A0x8d14320ada5f9041!2sGroupe%203iL!5e0!3m2!1sfr!2sfr!4v1696853032517!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+     </div>
+      
     </section>
-    <!-- Fin de la Section du profile -->
-
-
-  
-
-
-
-</body>
 
 </html>
