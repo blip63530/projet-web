@@ -42,7 +42,7 @@ class MainController{
         $data_page =[
             "page_description"=>"un super jeu pour devenir fou",
             "page_title" => "floppy bird",
-            "view"=> "./views/floppy.php",
+            "view"=> "./views/flappy.php",
             "template"=>"./views/common/template.php"
         ];
         $this->genererPage($data_page);
