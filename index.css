@@ -210,7 +210,13 @@ table tr td {
 
 
 .page_content {
-    align-items: center;
+
+}
+.page_flappy{
+    background-color: #252525;
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
 }
 
 /* -----------------------------------------------FLOPPY---------------------------------------------------------- */
