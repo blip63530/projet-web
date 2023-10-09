@@ -1,5 +1,6 @@
 <?php
 require_once("./controllers/MainController.php");
+require_once("./models/Visiteur/visitorModel.php");
 class visitorController extends MainController{
     
     private $mainManager;
@@ -19,7 +20,7 @@ class visitorController extends MainController{
         $data_page =[
             "page_description"=>"Page d'inscription",
             "page_title" => "inscription",
-            "view"=> "./views/inscription.php",
+            "view"=> "./views/visiteur/inscription.php",
             "template"=>"./views/common/template.php"
         ];
         $this->genererPage($data_page);
@@ -37,7 +38,7 @@ class visitorController extends MainController{
         $data_page = [
             "page_description"=>"description de la page",
             "page_title" => "titre de la page",
-            "view"=> "./views/authentification.php",
+            "view"=> "./views/visiteur/authentification.php",
             "template"=>"./views/common/template.php"
         ];
         $this->genererPage($data_page);
@@ -54,3 +55,4 @@ class visitorController extends MainController{
         $this->genererPage($data_page);
     }
 }
+?>

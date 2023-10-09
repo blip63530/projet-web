@@ -9,6 +9,7 @@ abstract class MainController{
         require_once ($view);
         $page_content = ob_get_clean();
         require_once ($template);
+        var_dump($data);
     }
     public function accueil(){
     /*    $datas = $this->mainManager->getDataX(); */
@@ -43,3 +44,4 @@ abstract class MainController{
 
 
 }
+?>

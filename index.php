@@ -1,8 +1,9 @@
-
-
 <?php
 require_once("./controllers/visitorController.php");
+require_once("./controllers/userController.php");
+require_once("./controllers/Securite.php");
 $visitorController = new visitorController();
+$userController = new userController();
 
 
 
@@ -15,7 +16,7 @@ try {
         $url = explode("/", filter_var($_GET['page'], FILTER_SANITIZE_URL));
         $page = $url[0];
     }
-
+    var_dump($page);
     switch ($page) {
         case "acceuil":
             $visitorController->accueil();
@@ -37,9 +38,22 @@ try {
             $visitorController->floppy();
             break;
 
+        case "authentifier":
+            echo "testttttt";
+            if(!empty($_POST["login"]) && !empty($_POST['password'])) {
+                $login = Securite::secureHTML($_POST['login']);
+                $password = Securite::secureHTML($_POST['password']);
+                $userController->validation_login($login,$password);
+            } else {
+                echo "nooon";
+                /*Toolbox::ajouterMessageAlerte("Login ou mot de passe non renseigné", Toolbox::COULEUR_ROUGE);
+                header('Location: '.URL."login");*/
+            }
+
         default:
             throw new Exception("la page n'existe pas");
     }
+
 } catch (Exception $e) {
     $page_description = "page de generation d'erreur";
     $page_title = "page d'erreur";

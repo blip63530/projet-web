@@ -16,14 +16,14 @@
     <section class="h-100 gradient-custom-2">
         <div class="container py-5 h-100">
             <div class="p-3" style="background-color: #f8f9fa;">
-                <form action="/profile.php">
+                <form action="index.php?page=authentifier" method="POST">
                     <div class="mb-3 mt-3">
-                        <label for="username" class="form-label">Nom d'utilisateur:</label>
-                        <input type="username" class="form-control" id="Username" placeholder="Entrez votre identifiant" name="IdName" autocomplete="username">
+                        <label for="login" class="form-label">Nom d'utilisateur:</label>
+                        <input type="login" class="form-control" id="login" placeholder="Entrez votre identifiant" name="login" autocomplete="username">
                     </div>
                     <div class="mb-3">
                         <label for="pwd" class="form-label">Mot de passe:</label>
-                        <input type="password" class="form-control" id="pwd" placeholder="Entrez votre mot de passe" name="pswd" autocomplete="password">
+                        <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe" name="password" autocomplete="password">
                     </div>
                     <div class="form-check mb-3">
                         <label class="form-check-label">

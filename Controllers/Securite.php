@@ -1,5 +1,10 @@
 <?php
-function derivateKey($password, $salt, $iterations, $keyLengthBits)
+
+class Securite{
+    public static function secureHTML($chaine){
+        return htmlentities($chaine);
+    }
+    function derivateKey($password, $salt, $iterations, $keyLengthBits)
 {
     return hash_pbkdf2(
         'sha256',
@@ -13,3 +18,5 @@ function derivateKey($password, $salt, $iterations, $keyLengthBits)
 function generateSalt(){
     return random_bytes(32);
 }
+}
+?>
