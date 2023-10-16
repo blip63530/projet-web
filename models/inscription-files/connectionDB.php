@@ -60,7 +60,7 @@ $pdo = connectDB();
 // Par exemple : $pdo->query("SELECT * FROM ma_table");
 
 
-
+/*
 //coonection mysqli
 $conn=mysqli_connect($servername,$username,$password,$dbname);
 // requete des score floppy
@@ -76,7 +76,7 @@ while ($row = mysqli_fetch_assoc($result)){
 // returning in form of json
 echo json_encode($data);
 
-
+*/
 
 
 

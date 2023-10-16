@@ -37,7 +37,7 @@
           //call ajax
           var ajax = new XMLHttpRequest();
           var method = "GET";
-          var url = "../models/inscription-files/connectionDB.php";
+          var url = "../models/inscription-files/scoresflappy.php";
           var asynchronous = true;
           ajax.open(method, url, asynchronous);
           //sending ajax request
