@@ -2,7 +2,7 @@
 
 //include 'loginDB.php';
 require_once '../../loginDB.php';
-echo $servername;
+
 
 //coonection mysqli
 $conn=mysqli_connect($servername,$username,$password,$dbname);
