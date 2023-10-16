@@ -2,17 +2,23 @@
 <html>
   <head>
     <title>Flappy Bird using JS | by learnWD</title>
+      <!-- Style sheets -->
+      <link href="../css/flappy2.css" rel="stylesheet">
+      <link href="../index.css" rel ="stylesheet">
   </head>
   <body>
   <div class="jeux_score">
 
 
   <div class="page_flappy">
+      <div class="score-container">
+          <div id="bestScore"></div>
+          <div id="currentScore"></div>
+      </div>
 
+      <canvas id="canvas" width="431" height="768"></canvas>
    
-   <canvas id="canvas" width="288" height="512"></canvas>
-   
- <script src="../scripts/flappyBird.js"></script>
+ <script src="../scripts/flappy2.js"></script>
   </div>
   <div class="scoress">
     <p id="pscorres">scores</p>
