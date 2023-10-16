@@ -5,8 +5,13 @@ require_once '../../loginDB.php';
 
 
 //coonection mysqli
-$conn=mysqli_connect($servername,$username,$password,$dbname,$db_port);
-
+try {
+    $conn = mysqli_connect($servername, $username, $password, $dbname, $db_port);
+}
+catch (Exception $e){
+    $error = $e->getMessage();
+    echo $error;
+}
 echo $conn->host_info . "\n";
 // requete des score floppy
 $result = mysqli_query($conn,'SELECT Comptes.Name AS Pseudo, ScoreNb FROM Scores
