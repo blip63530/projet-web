@@ -26,7 +26,7 @@
 <h2 class="w3-center">Bienvenue, <?php echo $datas["name"]; ?></h2>
 
 <div class="w3-content w3-display-container">
-    <img class="mySlides" src="img/index/ex1.jpg" style="width:100%">
+    <img class="mySlides" src="img/index/flappy.png" width="800" height="500">
     <img class="mySlides" src="img/index/ex2.jpg" style="width:100%">
     <img class="mySlides" src="img/index/ex3.jpg" style="width:100%">
     <img class="mySlides" src="img/index/ex1.jpg" style="width:100%">

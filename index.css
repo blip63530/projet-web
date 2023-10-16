@@ -323,3 +323,28 @@ h1floppy {
     width: 100%;
     height: 33vh;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mySlides {
+    margin: 0 auto;
+}
+
+.w3-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Cela assure que la div parent a une hauteur de 100% de la vue */
+}
