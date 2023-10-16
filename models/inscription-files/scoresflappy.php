@@ -5,7 +5,7 @@ require_once '../../loginDB.php';
 
 
 //coonection mysqli
-$conn=mysqli_connect($servername,$username,$password,$dbname);
+$conn=mysqli_connect($servername,$username,$password,$dbname,$db_port);
 
 echo $conn->host_info . "\n";
 // requete des score floppy
