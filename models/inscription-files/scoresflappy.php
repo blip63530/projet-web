@@ -7,6 +7,7 @@ require_once '../../loginDB.php';
 //coonection mysqli
 $conn=mysqli_connect($servername,$username,$password,$dbname);
 
+echo $conn->host_info . "\n";
 // requete des score floppy
 $result = mysqli_query($conn,'SELECT Comptes.Name AS Pseudo, ScoreNb FROM Scores
 INNER JOIN Comptes ON Scores.UID=Comptes.UID
@@ -17,7 +18,6 @@ $data = array();
 while ($row = mysqli_fetch_assoc($result)){
     $data[] = $row;
 }
-echo$data;
 // returning in form of json
 echo json_encode($data);
 //echo('5');
