@@ -141,4 +141,5 @@ img.onload = render;
 document.addEventListener('click', () => gamePlaying = true);
 document.addEventListener('space', () => gamePlaying = true);
 window.onclick = () => flight = jump;
+window.oninput = () => flight = jump;
 window.onkeypress = () => flight = jump;
