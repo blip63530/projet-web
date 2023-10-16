@@ -213,12 +213,20 @@ table tr td {
 
 }
 .page_flappy{
-    background-color: #252525;
     display: flex;
+    min-width: 500px;
     justify-content: center; /* Centre horizontalement */
     align-items: center; /* Centre verticalement */
 }
+.score{
+z-index: 10;
+}
+.jeux_score{
 
+    display: flex;
+    justify-content: space-evenly;
+    background-color:#aeaeae;
+}
 /* -----------------------------------------------FLOPPY---------------------------------------------------------- */
 /*
 
