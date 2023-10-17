@@ -16,7 +16,7 @@ require_once 'loginDB.php';
 <body>
     <section id="classement">
         <?php
-        $conn = mysqli_connect($servername, $username, $password, $dbname, $db_port);
+        $conn = mysqli_connect($servername, $username, $password, $dbname);
 
         // Récupérer le nom du jeu
         $gameId = 1; // Remplacez 1 par l'ID du jeu que vous souhaitez afficher
