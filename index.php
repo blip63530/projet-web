@@ -39,6 +39,16 @@ try {
         case "classement":
             $mainController->classement();
             break;
+        case "authentifier":
+            if (!empty($_POST["login"]) && !empty($_POST['password'])) {
+                $login = Securite::secureHTML($_POST['login']);
+                $password = Securite::secureHTML($_POST['password']);
+                $userController->validation_login($login, $password);
+            } else {
+                echo "nooon";
+                /*Toolbox::ajouterMessageAlerte("Login ou mot de passe non renseigné", Toolbox::COULEUR_ROUGE);
+                    header('Location: '.URL."login");*/
+            }
         default:
             throw new Exception("la page n'existe pas");
     }
