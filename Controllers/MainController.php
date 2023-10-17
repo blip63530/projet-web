@@ -76,4 +76,14 @@ class MainController{
         ];
         $this->genererPage($data_page);
     }
+
+    public function classement(){
+        $data_page = [
+            "page_description"=>"page de classement",
+            "page_title" => "classement",
+            "view"=> "./views/classement.php",
+            "template"=>"./views/common/template.php"
+        ];
+        $this->genererPage($data_page);
+    }
 }

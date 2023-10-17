@@ -22,7 +22,7 @@
                         <a href="#">Link 3</a>
                     </div>
                 </div>
-                <li><a href="classements.php">Classements</a></li>
+                <li><a href="index.php?page=classement">Classements</a></li>
                 <li><a href="index.php?page=contact">Contact</a></li>
             </ul>
         </nav>

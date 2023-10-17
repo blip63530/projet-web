@@ -35,8 +35,10 @@ try {
             break;
         case "floppy":
             $mainController->floppy();
+            break;   
+        case "classement":
+            $mainController->classement();
             break;
-
         default:
             throw new Exception("la page n'existe pas");
     }
