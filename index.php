@@ -44,13 +44,12 @@ try {
             break;
         case "authentifier":
             if (!empty($_POST["login"]) && !empty($_POST['password'])) {
-                echo "login ok";
 
                 $login = Securite::secureHTML($_POST['login']);
                 $password = Securite::secureHTML($_POST['password']);
                 echo $userController->validation_login($login, $password);
             } else {
-                echo "nooon";
+                echo "identifiants non complets";
                 /*Toolbox::ajouterMessageAlerte("Login ou mot de passe non renseigné", Toolbox::COULEUR_ROUGE);
                     header('Location: '.URL."login");*/
             }

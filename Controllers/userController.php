@@ -28,11 +28,9 @@ class userController extends MainController{
     function connection($nom, $pw)
     {
         $validation = "noresult";
-        echo $pw;
         $conn = $this->connectDB();
         $stmt = mysqli_prepare($conn,"SELECT Name FROM Comptes WHERE PW=? AND Name=?");
         mysqli_stmt_bind_param($stmt,'ss',$pw,$nom);
-        echo $pw;
 
         /* execute query */
         mysqli_stmt_execute($stmt);
@@ -42,13 +40,11 @@ class userController extends MainController{
 
         /* fetch value */
         mysqli_stmt_fetch($stmt);
-        echo " - resultat: $nom";
-        echo $validation;
         if($nom == $validation) {
-            echo "ok";
+            echo "ok connection";
             return(true);
         } else 
-        echo "not ok";
+        echo "not ok - identifiants non trouvés";
         return(false);
 
     }
