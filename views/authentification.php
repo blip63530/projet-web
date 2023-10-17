@@ -22,7 +22,7 @@
                         <input type="login" class="form-control" id="login" placeholder="Entrez votre identifiant" name="login" autocomplete="username">
                     </div>
                     <div class="mb-3">
-                        <label for="pwd" class="form-label">Mot de passe:</label>
+                        <label for="password" class="form-label">Mot de passe:</label>
                         <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe" name="password" autocomplete="password">
                     </div>
                     <div class="form-check mb-3">

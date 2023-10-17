@@ -5,9 +5,8 @@ require_once("./loginDB.php");
 class userController extends MainController{
     function connectDB()
     {
-        global $servername, $username, $password, $dbname;
-        echo $username;
-        $conn = mysqli_connect($servername, $username, $password, $dbname);
+        global $servername, $DBusername, $DBpassword, $dbname;
+        $conn = mysqli_connect($servername, $DBusername, $DBpassword, $dbname);
         
 
         return $conn;
@@ -28,22 +27,46 @@ class userController extends MainController{
     }
     function connection($nom, $pw)
     {
-        $validation = "";
+        $validation = "noresult";
+        echo $pw;
         $conn = $this->connectDB();
-        $stmt = $conn->prepare("SELECT Name FROM Comptes WHERE PW=? AND Name=?");
-        $stmt->bind_param("ss",$nom,$pw);
-        $stmt->execute();
-        $stmt->bind_result($validation);
-        $stmt->fetch();
+        $stmt = mysqli_prepare($conn,"SELECT Name FROM Comptes WHERE PW=? AND Name=?");
+        mysqli_stmt_bind_param($stmt,'ss',$pw,$nom);
+        echo $pw;
+
+        /* execute query */
+        mysqli_stmt_execute($stmt);
+
+        /* bind result variables */
+        mysqli_stmt_bind_result($stmt, $validation);
+
+        /* fetch value */
+        mysqli_stmt_fetch($stmt);
+        echo " - resultat: $nom";
+        echo $validation;
         if($nom == $validation) {
+            echo "ok";
             return(true);
-        } else return(false);
+        } else 
+        echo "not ok";
+        return(false);
 
     }
+    function connection2($nom,$pw){
+        $conn = $this->connectDB();
+        $result = mysqli_query($conn,"SELECT Name FROM Comptes WHERE PW=$pw AND Name=$nom");
+        echo $nom;
+        echo $result;
+        if($nom == $result) {
+            echo "ok";
+            return(true);
+        } else 
+        echo "not ok";
+        return(false);
+    }
 
-    function validation_login($login,$password){
-        echo "$login - $password";
-        $this->connection($login,$password);
+    function validation_login($login,$pw){
+        return($this->connection($login,$pw));
         
     }
 
