@@ -1,8 +1,11 @@
 
 
 <?php
+require_once("./Controllers/Securite.php");
 require_once("./Controllers/MainController.php");
+require_once("./Controllers/userController.php");
 $mainController = new MainController();
+$userController = new userController();
 
 
 

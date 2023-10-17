@@ -1,6 +1,6 @@
 <?php
 require_once("./controllers/MainController.php");
-require_once("./controllers/params/loginDB.php");
+require_once("./loginDB.php");
 /*require_once("./models/Visiteur/utilisateurModel.php"); */
 class userController extends MainController{
     function connectDB()
@@ -19,7 +19,7 @@ class userController extends MainController{
         INNER JOIN Jeu ON Scores.IDGAME = Jeu.IDGAME
         WHERE NomJeu = "flappy" ORDER BY ScoreNb DESC LIMIT 10;');
     }
-    function inscription($nom,$mail,$pw)
+    function inscrire($nom,$mail,$pw)
     {
         $conn=$this->connectDB();
         $stmt = $conn->prepare("INSERT INTO Comptes(Name,Mail,PW) VALUES (?,?,?)");
