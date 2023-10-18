@@ -1,6 +1,5 @@
 <?php
-    require_once("./Controllers/gameController.php");
-
+    
     $gameController = new GameController();
 
     // Obtenez les données du jeu
