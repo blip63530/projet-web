@@ -2,6 +2,7 @@
 
 <?php
 require_once("./models/gameModel.php");
+require_once("./models/userModel.php");
 require_once("./Controllers/gameController.php");
 require_once("./Controllers/Securite.php");
 require_once("./Controllers/MainController.php");

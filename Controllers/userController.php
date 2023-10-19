@@ -1,8 +1,23 @@
 <?php
 require_once("./controllers/MainController.php");
 require_once("./loginDB.php");
+
 /*require_once("./models/Visiteur/utilisateurModel.php"); */
 class userController extends MainController{
+
+
+    private $model;
+
+    public function __construct() {
+        $this->model = new UserModel();
+    }
+
+    public function inscrire($nom, $mail, $pw) {
+        return $this->model->incrire($nom, $mail, $pw);
+    }
+
+
+
     function connectDB()
     {
         global $servername, $DBusername, $DBpassword, $dbname;
@@ -18,13 +33,13 @@ class userController extends MainController{
         INNER JOIN Jeu ON Scores.IDGAME = Jeu.IDGAME
         WHERE NomJeu = "flappy" ORDER BY ScoreNb DESC LIMIT 10;');
     }
-    function inscrire($nom,$mail,$pw)
-    {
-        $conn=$this->connectDB();
-        $stmt = $conn->prepare("INSERT INTO Comptes(Name,Mail,PW) VALUES (?,?,?)");
-        $stmt->bind_param("sss",$nom,$mail,$pw);
-        $stmt->execute();
-    }
+    //function inscrire($nom,$mail,$pw)
+    //{
+    //    $conn=$this->connectDB();
+    //    $stmt = $conn->prepare("INSERT INTO Comptes(Name,Mail,PW) VALUES (?,?,?)");
+    //    $stmt->bind_param("sss",$nom,$mail,$pw);
+    //    $stmt->execute();
+    //}
     function connection($nom, $pw)
     {
         $validation = "noresult";
