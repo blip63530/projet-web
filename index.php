@@ -2,7 +2,6 @@
 
 <?php
 require_once("./models/gameModel.php");
-require_once("./models/userModel.php");
 require_once("./Controllers/gameController.php");
 require_once("./Controllers/Securite.php");
 require_once("./Controllers/MainController.php");
@@ -50,7 +49,9 @@ try {
 
                 $login = Securite::secureHTML($_POST['login']);
                 $password = Securite::secureHTML($_POST['password']);
-                echo $userController->validation_login($login, $password);
+                if (($user = $userController->validation_login($login, $password))!=null){
+                    $userModel = new UserModel($user);
+                }
             } else {
                 echo "identifiants non complets";
                 /*Toolbox::ajouterMessageAlerte("Login ou mot de passe non renseigné", Toolbox::COULEUR_ROUGE);
