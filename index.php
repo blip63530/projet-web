@@ -49,7 +49,9 @@ try {
                 $login = Securite::secureHTML($_POST['login']);
                 $password = Securite::secureHTML($_POST['password']);
                 if (($user = $mainController->validation_login($login, $password)) != null) {
-                    //$mainController = new userController($login); 
+                    //$mainController = new userController($login);
+                    $_SESSION['login']=$login;
+                    $_SESSION['uid']=ConnectionDB::getuid($login);
                     $mainController->creerUser($login);
                     $mainController->accueil();
                     

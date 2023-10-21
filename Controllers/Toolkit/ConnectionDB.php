@@ -115,10 +115,18 @@ class ConnectionDB
     }
     public static function set_gamescore($game, $score)
     {
+        $uid=$_SESSION['uid'];
         $conn = ConnectionDB::connectDB();
-        $uid = 1;
         mysqli_query($conn, "UPDATE Scores
             SET ScoreNb=$score
             WHERE UID = $uid AND IDGAME=$game;");
+
+
+    }
+
+    public static function getuid($login){
+        $conn = ConnectionDB::connectDB();
+        $uid = mysqli_query($conn,"SELECT UID FROM Comptes WHERE Name=$login;");
+        return $uid;
     }
 }
