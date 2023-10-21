@@ -11,7 +11,7 @@ private $template = "./views/common/template.php";
         ob_start();
         require_once ($view);
         $page_content = ob_get_clean();
-        require_once ($this->$template);
+        //require_once ($this->$template);
 
     }
 
@@ -20,6 +20,7 @@ private $template = "./views/common/template.php";
             "page_description"=>"description de la page",
             "page_title" => "titre de la page",
             "view"=> "./views/authentification.php",
+            "template"=>"./views/common/template.php"
         ];
         $this->genererPage($data_page);
     }
