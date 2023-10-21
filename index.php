@@ -30,7 +30,7 @@ try {
             break;
         case "inscription":
             $mainController->inscription();
-           break;
+            break;
 
         case "profile":
             $mainController->profile();
@@ -40,26 +40,43 @@ try {
             break;
         case "floppy":
             $mainController->floppy();
-            break;   
+            break;
         case "snake":
             $mainController->snake();
-            break; 
+            break;
         case "classement":
             $mainController->classement();
             break;
         case "authentifier":
             if (!empty($_POST["login"]) && !empty($_POST['password'])) {
-
                 $login = Securite::secureHTML($_POST['login']);
                 $password = Securite::secureHTML($_POST['password']);
-                if (($user = $userController->validation_login($login, $password))!=null){
+                if (($user = $userController->validation_login($login, $password)) != null) {
                     $userModel = new UserModel($user);
+                    $mainController->accueil();
                 }
             } else {
                 echo "identifiants non complets";
                 /*Toolbox::ajouterMessageAlerte("Login ou mot de passe non renseigné", Toolbox::COULEUR_ROUGE);
                     header('Location: '.URL."login");*/
             }
+            break;
+        case "inscrire":
+            //echo $_POST["login"], $_POST["password"], $_POST["passwordcheck"], $_POST["email"];
+            if (!empty($_POST["login"]) && !empty($_POST['password']) && !empty($_POST['passwordcheck'] && !empty($_POST['email']) && ($_POST['passwordcheck']==$_POST['password']))) {
+
+                $login = Securite::secureHTML($_POST['login']);
+                $password = Securite::secureHTML($_POST['password']);
+                $email =Securite::secureHTML($_POST['email']);
+                $passwordcheck=Securite::secureHTML($_POST['passwordcheck']);
+                $userController->inscrire($login,$password,$email);
+                $mainController->accueil();
+            } else {
+                echo "identifiants non complets";
+                /*Toolbox::ajouterMessageAlerte("Login ou mot de passe non renseigné", Toolbox::COULEUR_ROUGE);
+                        header('Location: '.URL."login");*/
+            }
+            break;
         default:
             throw new Exception("la page n'existe pas");
     }

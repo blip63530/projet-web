@@ -16,22 +16,22 @@
     <section class="h-100 gradient-custom-2">
         <div class="container py-5 h-100">
             <div class="p-3" style="background-color: #f8f9fa;">
-                <form action="/action_page.php">
+                <form action="index.php?page=inscrire" method="POST">
                     <div class="mb-3 mt-3">
-                        <label for="Username" class="form-label">Nom d'utilisateur:</label>
-                        <input type="username" class="form-control" id="Username" placeholder="Entrez votre identifiant" name="IdName" autocomplete="username">
+                        <label for="login" class="form-label">Nom d'utilisateur:</label>
+                        <input type="login" class="form-control" id="login" placeholder="Entrez votre identifiant" name="login" autocomplete="username">
                     </div>
                     <div class="mb-3">
-                        <label for="pwd" class="form-label">Mot de passe:</label>
-                        <input type="password" class="form-control" id="pwd" placeholder="Entrez votre mot de passe" name="pswd">
+                        <label for="password" class="form-label">Mot de passe:</label>
+                        <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe" name="password">
                     </div>
                     <div class="mb-3">
-                        <label for="pwd" class="form-label">Réécrivez votre Mot de passe:</label>
-                        <input type="password" class="form-control" id="pwdcheck" placeholder="Entrez votre mot de passe" name="pswdcheck">
+                        <label for="passwordcheck" class="form-label">Réécrivez votre Mot de passe:</label>
+                        <input type="passwordcheck" class="form-control" id="passwordcheck" placeholder="Entrez votre mot de passe" name="passwordcheck">
                     </div>
                     <div class="mb-3">
-                        <label for="mail" class="form-label">Mail:</label>
-                        <input type="email" class="form-control" id="mail" placeholder="Entrez votre mail" name="mail" autocomplete="email">
+                        <label for="email" class="form-label">Mail:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Entrez votre mail" name="email" autocomplete="email">
                     </div>
                     <div class="form-check mb-3">
                         <label class="form-check-label">
