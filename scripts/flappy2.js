@@ -1,3 +1,4 @@
+
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const img = new Image();
@@ -17,6 +18,20 @@ let index = 0,
     flyHeight,
     currentScore,
     pipe;
+
+const getFPS = () =>
+    new Promise(resolve =>
+        requestAnimationFrame(t1 =>
+            requestAnimationFrame(t2 => resolve(1000 / (t2 - t1)))
+        )
+    )
+/*
+if (getFPS()>30){
+    speed=3.1;
+}
+else
+    speed=6.2;
+*/
 
 // pipe settings
 const pipeWidth = 78;
@@ -95,6 +110,24 @@ const render = () => {
                 // check if it's the best score
                 bestScore = Math.max(bestScore, currentScore);
                 setCookie("highscore", bestScore, 999);
+                //set high score in database
+                jQuery.ajax({
+                    type: "POST",
+                    url: '../Controllers/userController.php',
+                    dataType: 'json',
+                    data: {functionname: 'set_gamescore', arguments: [1,bestScore]},
+
+                    success: function (obj, textstatus) {
+                        if( !('error' in obj) ) {
+                            yourVariable = obj.result;
+                        }
+                        else {
+                            console.log(obj.error);
+                        }
+                    }
+                });
+
+
 
                 // remove & create new pipe
                 pipes = [...pipes.slice(1), [pipes[pipes.length-1][0] + pipeGap + pipeWidth, pipeLoc()]];

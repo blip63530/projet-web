@@ -3,13 +3,12 @@
 <?php
 require_once("./models/gameModel.php");
 require_once("./Controllers/gameController.php");
-require_once("./Controllers/Securite.php");
-require_once("./Controllers/MainController.php");
+require_once("./Controllers/Toolkit/Securite.php");
+//require_once("./Controllers/MainController.php");
 require_once("./Controllers/userController.php");
 require_once("./models/userModel.php");
-$mainController = new MainController();
+$mainController = new userController();
 $userController = new userController();
-
 
 
 
@@ -42,6 +41,9 @@ try {
         case "floppy":
             $mainController->floppy();
             break;   
+        case "snake":
+            $mainController->snake();
+            break; 
         case "classement":
             $mainController->classement();
             break;

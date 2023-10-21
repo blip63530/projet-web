@@ -86,4 +86,13 @@ class MainController{
         ];
         $this->genererPage($data_page);
     }
+    public function snake(){
+        $data_page =[
+            "page_description"=>"un super jeu pour devenir gros",
+            "page_title" => "snake",
+            "view"=> "./views/Snake.php",
+            "template"=>"./views/common/template.php"
+        ];
+        $this->genererPage($data_page);
+    }
 }

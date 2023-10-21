@@ -1,7 +1,17 @@
+<?php
+
+include_once("./Controllers/Toolkit/ConnectionDB.php");
+// Obtenez les données du jeu
+ConnectionDB::getGameInfo(1);
+//$gameModel->set_gamescore();
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flappy Bird using JS | by learnWD</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <script src="../scripts/jquery-3.7.1.min.js"></script>
+      <title>Flappy Bird using JS | by learnWD</title>
       <!-- Style sheets -->
       <link href="../css/flappy2.css" rel="stylesheet">
       <link href="../index.css" rel ="stylesheet">
@@ -21,17 +31,44 @@
  <script src="../scripts/flappy2.js"></script>
   </div>
   <div class="scoress">
+      <section id="classement">
+          <div class="game-info">
+              <h1><?= $data['gameName'] ?></h1>
+              <!-- L'image du jeu peut être ajoutée ici -->
+              <!-- <img src="chemin/vers/votre/image.jpg" alt="Nom du Jeu"> -->
+          </div>
+          <?php if (count($data['scores']) > 0): ?>
+              <table border='1'>
+                  <tr>
+                      <th>Nom du Joueur</th>
+                      <th>Score</th>
+                  </tr>
+                  <?php foreach ($data['scores'] as $score): ?>
+                      <tr>
+                          <td><?= $score['name'] ?></td>
+                          <td><?= $score['score'] ?></td>
+                      </tr>
+                  <?php endforeach; ?>
+              </table>
+          <?php else: ?>
+              <p>Aucun score trouvé pour ce jeu.</p>
+          <?php endif; ?>
+      </section>
+
+
+
+      <!--
     <p id="pscorres">scores</p>
       <table>
       <tbody id="tabscores">
 
       </tbody>
       </table>
-
+-->
 
   </div>
   </div>
-
+<!--
   <script>
       document.addEventListener("DOMContentLoaded", () => {
           //call ajax
@@ -72,6 +109,7 @@
 
 
   </script>
+  -->
   </body>
 
 </html>
