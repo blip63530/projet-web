@@ -12,7 +12,6 @@ $userController = new userController();
 
 
 
-
 try {
 
     if (empty($_GET['page'])) {

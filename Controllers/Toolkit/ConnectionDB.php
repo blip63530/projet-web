@@ -1,4 +1,4 @@
-<?
+<?php
     include_once("./Controllers/Toolkit/loginDB.php");
     class ConnectionDB
     {
