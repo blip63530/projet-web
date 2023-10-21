@@ -1,6 +1,7 @@
 <?php
 
 class GameController {
+
     private $model;
 
     public function __construct() {
@@ -11,5 +12,8 @@ class GameController {
         $gameId = 1; // Remplacez 1 par l'ID du jeu que vous souhaitez afficher
         return $this->model->getGameInfo($gameId);
     }
+
+
+
 }
 

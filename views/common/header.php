@@ -13,7 +13,7 @@
         <!--  menu site -->
         <nav class="main-menu">
             <ul>
-                <li><a href="acceuil">Accueil</a></li>
+                <li><a href="index.php?page=acceuil">Accueil</a></li>
                 <div class="dropdown">
                     <button class="dropbtn">Jeux</button>
                     <div class="dropdown-content">

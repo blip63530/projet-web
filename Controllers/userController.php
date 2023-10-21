@@ -67,5 +67,15 @@ class userController extends MainController{
         
     }
 
+
+
+    function set_gamescore($game,$score){
+        var_dump($game,$score);
+        $conn = $this->connectDB();
+        $uid= 1 ;
+        mysqli_query($conn,"UPDATE Scores
+SET ScoreNb=$score
+WHERE UID = $uid AND IDGAME=$game;");
+    }
 }
 ?>

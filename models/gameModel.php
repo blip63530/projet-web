@@ -45,7 +45,13 @@ class GameModel {
     public function closeConnection() {
         $this->conn->close();
     }
-
+    function set_gamescore($game,$score){
+        $conn = $this->connectDB();
+        $uid= 1 ;
+        mysqli_query($conn,"UPDATE Scores
+SET ScoreNb=$score
+WHERE UID = $uid AND IDGAME=$game;");
+    }
     
 }
 
