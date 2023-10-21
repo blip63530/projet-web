@@ -14,7 +14,7 @@
     <!-- Section du profile -->
 
     <section class="h-100 gradient-custom-2">
-        <div class="container py-5 h-100">
+        <div class="container py-5 h-100 d-flex justify-content-center">
             <div class="p-3" style="background-color: #f8f9fa;">
                 <form action="index.php?page=authentifier" method="POST">
                     <div class="mb-3 mt-3">
