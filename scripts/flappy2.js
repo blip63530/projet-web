@@ -113,7 +113,7 @@ const render = () => {
                 //set high score in database
                 jQuery.ajax({
                     type: "POST",
-                    url: '../Controllers/userController.php',
+                    url: "../Controllers/Toolkit/ConnectionDB.php",
                     dataType: 'json',
                     data: {functionname: 'set_gamescore', arguments: [1,bestScore]},
 
