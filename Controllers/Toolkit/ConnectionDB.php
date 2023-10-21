@@ -73,7 +73,7 @@
             $gameRow = $gameResult->fetch_assoc();
             $gameName = $gameRow ? $gameRow['NomJeu'] : ''; // Initialisez à une chaîne vide si aucune donnée n'est trouvée
     
-            $scoresQuery = "SELECT c.Name, s.ScoreNb FROM Comptes c
+            $scoresQuery = "SELECT c.Name, s.ScoreNb, s.dateScore FROM Comptes c
                             INNER JOIN Scores s ON c.UID = s.UID
                             WHERE s.IDGAME = $gameId
                             ORDER BY s.ScoreNb DESC;";
@@ -84,7 +84,8 @@
                 while ($row = $scoresResult->fetch_assoc()) {
                     $scores[] = [
                         'name' => $row['Name'],
-                        'score' => $row['ScoreNb']
+                        'score' => $row['ScoreNb'],
+                        'date' => $row['dateScore']
                     ];
                 }
             }

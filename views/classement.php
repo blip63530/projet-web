@@ -27,11 +27,13 @@
                 <tr>
                     <th>Nom du Joueur</th>
                     <th>Score</th>
+                    <th>Date</th>
                 </tr>
                 <?php foreach ($data['scores'] as $score): ?>
                     <tr>
                         <td><?= $score['name'] ?></td>
                         <td><?= $score['score'] ?></td>
+                        <td><?= $score['date'] ?></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
