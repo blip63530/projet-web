@@ -3,29 +3,15 @@
 class MainController{
     private $mainManager;
     public function __construct(){
-        $this->mainManager = new MainManager();
     }
-    private function genererPage($data){
+    protected function genererPage($data){
+        echo "classic";
         extract($data);
         ob_start();
         require_once ($view);
         $page_content = ob_get_clean();
         require_once ($template);
-    }
-    public function accueil(){
-        $datas = $this->mainManager->getDataX();
-        $_SESSION['alert'] = [
-            "message" => "message",
-            "type" => "alert-danger"
-        ];
-        $data_page = [
-            "page_description"=>"page d'acceuil",
-            "page_title" => "acceuil",
-            "view"=> "./views/acceuil.php",
-            "datas" => $datas,
-            "template"=>"./views/common/template.php"
-        ];
-        $this->genererPage($data_page);
+
     }
 
     public function authentification(){
@@ -37,6 +23,48 @@ class MainController{
         ];
         $this->genererPage($data_page);
     }
+    public function inscription(){
+        $data_page =[
+            "page_description"=>"Page d'inscription",
+            "page_title" => "inscription",
+            "view"=> "./views/inscription.php",
+            "template"=>"./views/common/template.php"
+        ];
+        $this->genererPage($data_page);
+    }
+
+    function validation_login($login,$pw){
+        if(ConnectionDB::connection($login,$pw)){
+            $_SESSION['profil']=[
+                "login"=>$login,
+            ];
+        }
+        return(ConnectionDB::connection($login,$pw));
+    }
+    function inscrire($login,$pw,$email){
+        [$salt,$hash] = Securite::HashKey($pw);
+        echo $salt,$hash,$login,$email;
+        ConnectionDB::inscrire($login,$email,$hash,$salt);
+    }
+
+
+    
+
+    public function accueil(){
+        //$datas = $this->mainManager->getDataX();
+        $_SESSION['alert'] = [
+            "message" => "message",
+            "type" => "alert-danger"
+        ];
+        $data_page = [
+            "page_description"=>"page d'acceuil",
+            "page_title" => "acceuil",
+            "view"=> "./views/acceuil.php",
+            "template"=>"./views/common/template.php"
+        ];
+        $this->genererPage($data_page);
+    }
+
 
     public function floppy(){
         $data_page =[
@@ -48,15 +76,7 @@ class MainController{
         $this->genererPage($data_page);
     }
     
-    public function inscription(){
-        $data_page =[
-            "page_description"=>"Page d'inscription",
-            "page_title" => "inscription",
-            "view"=> "./views/inscription.php",
-            "template"=>"./views/common/template.php"
-        ];
-        $this->genererPage($data_page);
-    }
+
     
     public function profile(){
         $data_page =[
@@ -95,4 +115,6 @@ class MainController{
         ];
         $this->genererPage($data_page);
     }
+
+
 }

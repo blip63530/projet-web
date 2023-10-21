@@ -2,23 +2,30 @@
 require_once("./Controllers/MainController.php");
 require_once("./Controllers/Toolkit/ConnectionDB.php");
 require_once("./Controllers/Toolkit/Securite.php");
-
-/*require_once("./models/Visiteur/utilisateurModel.php"); */
+require_once("./models/userModel.php");
 class userController extends MainController{
-   
+    private $usermodel;
+    public function __construct(){
+        //$this->usermodel = new userModel($name);
+    }
 
-    function validation_login($login,$pw){
-        return(ConnectionDB::connection($login,$pw));
-        
-    }
-    function inscrire($login,$pw,$email){
-        [$salt,$hash] = Securite::HashKey($pw);
-        echo $salt,$hash,$login,$email;
-        ConnectionDB::inscrire($login,$email,$hash,$salt);
-    }
+
     function creerUser($username){
-        //TODO fonction pour creer le modele user dans ce controller et donc le stocker
+        $this->usermodel = new UserModel($username);
+    }  
+    protected function genererPage($data){
+        //echo "connected";
+        extract($data);
+        ob_start();
+        require_once ($view);
+        $page_content = ob_get_clean();
+        //require_once ("./views/common/connected/template.php"); 
+        require_once ($template);
 
+    
+    }
+    function getUser(){
+        return $this->usermodel;
     }
 
 }
