@@ -2,7 +2,7 @@
 
 include_once("./Controllers/Toolkit/ConnectionDB.php");
 // Obtenez les données du jeu
-ConnectionDB::getGameInfo(1);
+$data=ConnectionDB::getGameInfo(1);
 //$gameModel->set_gamescore();
 ?>
 
