@@ -1,8 +1,8 @@
 <?php
 
-$gameModel = new GameModel();
+include_once("./Controllers/Toolkit/ConnectionDB.php");
 // Obtenez les données du jeu
-$data= $gameModel->getGameInfo(1);
+ConnectionDB::getGameInfo(1);
 //$gameModel->set_gamescore();
 ?>
 

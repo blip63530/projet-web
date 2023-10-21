@@ -41,6 +41,9 @@ try {
         case "floppy":
             $mainController->floppy();
             break;   
+        case "snake":
+            $mainController->snake();
+            break; 
         case "classement":
             $mainController->classement();
             break;

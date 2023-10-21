@@ -17,8 +17,8 @@
                 <div class="dropdown">
                     <button class="dropbtn">Jeux</button>
                     <div class="dropdown-content">
-                        <a href="index.php?page=floppy">floppy</a>
-                        <a href="#">Link 2</a>
+                        <a href="index.php?page=floppy">Floppy</a>
+                        <a href="index.php?page=snake">Snake</a>
                         <a href="#">Link 3</a>
                     </div>
                 </div>
