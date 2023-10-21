@@ -1,16 +1,17 @@
 <?php
     require_once("./models/MainManager.php");
 class MainController{
-    private $mainManager;
+    //private $mainManager;
     public function __construct(){
     }
+private $template = "./views/common/template.php";
     protected function genererPage($data){
-        echo "classic";
+        //echo "classic";
         extract($data);
         ob_start();
         require_once ($view);
         $page_content = ob_get_clean();
-        require_once ($template);
+        require_once ($this->$template);
 
     }
 
@@ -19,7 +20,6 @@ class MainController{
             "page_description"=>"description de la page",
             "page_title" => "titre de la page",
             "view"=> "./views/authentification.php",
-            "template"=>"./views/common/template.php"
         ];
         $this->genererPage($data_page);
     }
