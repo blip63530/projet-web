@@ -130,6 +130,11 @@ ol {
     padding-bottom: 100px;
 }
 
+#profile a {
+    color: black;
+    text-decoration: none;
+}
+
 #profile table {
     width: 80%;
     margin: 20px auto;
@@ -155,6 +160,37 @@ td {
 
 #profile tr:hover {
     background-color: #ddd;
+}
+
+.btn-outline-dark {
+    border: none;
+    background-color: #ffb320;
+
+}
+
+.btn-outline-dark:hover {
+    background-color: #ffd37b;
+}
+
+.user-panel:hover {
+    background-color: #ffd37b;
+}
+
+#profile img{
+    border-radius: 50%;
+}
+
+.h5, h5 {
+    font-size: 1.8rem;
+    color: black;
+}
+
+#profile p {
+    color: black;
+}
+
+.card {
+    border: 6mm ridge #f4bf55;
 }
 
 
