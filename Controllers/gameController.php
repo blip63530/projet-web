@@ -12,6 +12,11 @@ class GameController {
         return ConnectionDB::getGameInfo($gameId);
     }
 
+    public function getScoresInfo() {
+        $uid = $_SESSION['uid'];
+        return ConnectionDB::getScoresJoueur($uid);
+    }
+
 
 
 }

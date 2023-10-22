@@ -142,39 +142,41 @@ class ConnectionDB
         mysqli_stmt_fetch($stmt);
         return $uid;
     }
-    public static function majProfile($ville,$desc,$login){
+
+    public static function getScoresJoueur($uid){
         $conn = ConnectionDB::connectDB();
-        $stmt = mysqli_prepare($conn, "UPDATE Comptes SET Description=?, Ville=? WHERE Name=?");
-        mysqli_stmt_bind_param($stmt, 'sss',$desc,$ville,$login);
-        /* execute query */
-        mysqli_stmt_execute($stmt);
 
-    }
-    public static function getDesc($login){
-        $conn = ConnectionDB::connectDB();
-        $stmt = mysqli_prepare($conn, "SELECT Description FROM Comptes WHERE Name=?");
-        mysqli_stmt_bind_param($stmt, 's',$login);
-        /* execute query */
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $desc);
+        
+        $query = "SELECT Jeu.NomJeu, Scores.ScoreNb, Scores.dateScore 
+                  FROM Scores 
+                  INNER JOIN Jeu ON Scores.IDGAME = Jeu.IDGAME 
+                  WHERE Scores.UID = ? 
+                  ORDER BY Scores.ScoreNb DESC";
 
-        /* fetch value */
-        mysqli_stmt_fetch($stmt);
+        // Préparez la requête SQL avec l'ID du joueur
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s", $uid); // "s" signifie chaîne (string)
 
-        return $desc;
-    }
-    public static function getVille($login){
-        $conn = ConnectionDB::connectDB();
-        $stmt = mysqli_prepare($conn, "SELECT Ville FROM Comptes WHERE Name=?");
-        mysqli_stmt_bind_param($stmt, 's',$login);
-        /* execute query */
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $ville);
+        // Exécutez la requête SQL
+        $stmt->execute();
 
-        /* fetch value */
-        mysqli_stmt_fetch($stmt);
+        // Récupérez les résultats de la requête
+        $result = $stmt->get_result();
 
-        return $ville;
+        // Initialisez un tableau pour stocker les données
+        $scores = array();
+
+        // Parcourez les résultats et stockez-les dans le tableau
+        while ($row = $result->fetch_assoc()) {
+            $scores[] = $row;
+        }
+
+        // Fermez la connexion à la base de données
+        $stmt->close();
+        $conn->close();
+
+        // Retournez les scores du joueur
+        return $scores;
     }
 
 
