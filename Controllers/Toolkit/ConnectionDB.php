@@ -46,8 +46,6 @@ class ConnectionDB
     public static function inscrire($nom, $mail, $pw, $salt)
     {
         $conn = ConnectionDB::connectDB();
-        echo gettype($pw);
-        echo gettype($salt);
 
         $stmt = $conn->prepare("INSERT INTO Comptes(Name,Mail,PW,salt) VALUES (?,?,?,?)");
         $stmt->bind_param("ssss", $nom, $mail, $pw, $salt);
