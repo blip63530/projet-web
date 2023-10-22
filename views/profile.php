@@ -1,13 +1,15 @@
+<?php
+$gameController = new GameController();
+$scores = $gameController->getScoresInfo($_SESSION['uid']);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <link rel="stylesheet" href="index.css">
 
-<?PHP 
 
-
-
-?>
 <head>
     <meta charset="UTF-8">
     <title>Projet web</title>
@@ -17,7 +19,7 @@
 
     <!-- Section du profile -->
 
-    <section class="h-100 gradient-custom-2">
+    <section id="profile" class="h-100 gradient-custom-2">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col col-lg-9 col-xl-7">
@@ -51,41 +53,30 @@
                             </div>
                             <div class=" justify-content-between align-items-center mb-4">
                                 <p class="lead fw-normal mb-3">Records</p>
-
-                                <section class="content-info p-4">
-                                    <div class="container paddings-mini">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <table class="table-striped table-responsive table-hover result-point">
-                                                    <thead class="point-table-head">
-                                                        <tr>
-                                                            <th class="text-left">Jeu</th>
-                                                            <th class="text-left">Record</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="text-center">
-                                                        <tr>
-                                                            <td class="text-left number">1 <i class="fa fa-caret-up" aria-hidden="true"></i></td>
-                                                            <td class="text-left">
-                                                                <span>Record 1</span>
-                                                            </td>
-
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="text-left number">2 <i class="fa fa-caret-up" aria-hidden="true"></i></td>
-                                                            <td class="text-left">
-                                                                <span>Record 2</span>
-                                                            </td>
-
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </section>
-
+                                <?php
+                                if (!empty($scores)) {
+                                    echo '<table class="table">';
+                                    echo '<thead>';
+                                    echo '<tr>';
+                                    echo '<th class="text-left">Jeu</th>';
+                                    echo '<th class="text-left">Score</th>';
+                                    echo '<th class="text-left">Date</th>';
+                                    echo '</tr>';
+                                    echo '</thead>';
+                                    echo '<tbody>';
+                                    foreach ($scores as $score) {
+                                        echo '<tr>';
+                                        echo '<td class="text-left">' . $score['NomJeu'] . '</td>';
+                                        echo '<td class="text-left">' . $score['ScoreNb'] . '</td>';
+                                        echo '<td class="text-left">' . $score['dateScore'] . '</td>';
+                                        echo '</tr>';
+                                    }
+                                    echo '</tbody>';
+                                    echo '</table>';
+                                } else {
+                                    echo '<p>Aucun score trouvé</p>';
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>

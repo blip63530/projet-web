@@ -132,4 +132,40 @@ class ConnectionDB
         mysqli_stmt_fetch($stmt);
         return $uid;
     }
+
+    public static function getScoresJoueur($uid){
+        $conn = ConnectionDB::connectDB();
+
+        
+        $query = "SELECT Jeu.NomJeu, Scores.ScoreNb, Scores.dateScore 
+                  FROM Scores 
+                  INNER JOIN Jeu ON Scores.IDGAME = Jeu.IDGAME 
+                  WHERE Scores.UID = ? 
+                  ORDER BY Scores.ScoreNb DESC";
+
+        // Préparez la requête SQL avec l'ID du joueur
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s", $uid); // "s" signifie chaîne (string)
+
+        // Exécutez la requête SQL
+        $stmt->execute();
+
+        // Récupérez les résultats de la requête
+        $result = $stmt->get_result();
+
+        // Initialisez un tableau pour stocker les données
+        $scores = array();
+
+        // Parcourez les résultats et stockez-les dans le tableau
+        while ($row = $result->fetch_assoc()) {
+            $scores[] = $row;
+        }
+
+        // Fermez la connexion à la base de données
+        $stmt->close();
+        $conn->close();
+
+        // Retournez les scores du joueur
+        return $scores;
+    }
 }
