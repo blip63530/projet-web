@@ -23,7 +23,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Mot de passe:</label>
-                        <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe" name="password">
+                        <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe" name="password" autocomplete="new-password">
                     </div>
                     <div class="mb-3">
                         <label for="passwordcheck" class="form-label">Réécrivez votre Mot de passe:</label>

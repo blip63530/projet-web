@@ -29,12 +29,13 @@ $scores = $gameController->getScoresInfo($_SESSION['uid']);
                             <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
                                 <img src="img\gamer.png" alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2" style="width: 150px; z-index: 1">
                                 <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;">
-                                    Modifier mon profile
+                                    <a href="index.php?page=modifier">Modifier mon profile</a>
+
                                 </button>
                             </div>
                             <div class="ms-3" style="margin-top: 130px;">
                                 <h5><?php echo $_SESSION['login']  ?></h5>
-                                <p>Limoges</p>
+                                <p><?php if(!empty($_SESSION['ville'])){echo $_SESSION['ville'];}?></p>
                             </div>
                         </div>
                         <div class="p-4 text-black" style="background-color: #f8f9fa;">
@@ -48,7 +49,7 @@ $scores = $gameController->getScoresInfo($_SESSION['uid']);
                             <div class="mb-5">
                                 <p class="lead fw-normal mb-3">A propos</p>
                                 <div class="p-4" style="background-color: #f8f9fa;">
-                                    <p class="font-italic mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <p class="font-italic mb-1"><?php if(!empty($_SESSION['desc'])){echo $_SESSION['desc'];}?></p>
                                 </div>
                             </div>
                             <div class=" justify-content-between align-items-center mb-4">
