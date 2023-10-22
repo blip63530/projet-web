@@ -113,7 +113,7 @@ const render = () => {
                 //set high score in database
                 jQuery.ajax({
                     type: "POST",
-                    url: "../Controllers/Toolkit/ConnectionDB.php",
+                    url: "./Controllers/Toolkit/ConnectionDB.php",
                     dataType: 'json',
                     data: {functionname: 'set_gamescore', arguments: [1,bestScore]},
 
@@ -175,4 +175,19 @@ document.addEventListener('click', () => gamePlaying = true);
 document.addEventListener('space', () => gamePlaying = true);
 window.onclick = () => flight = jump;
 window.oninput = () => flight = jump;
+window.onclick = () => jQuery.ajax({
+    type: "POST",
+    url: "./Controllers/Toolkit/ConnectionDB.php",
+    dataType: 'json',
+    data: {functionname: 'set_gamescore', arguments: [1,bestScore]},
+
+    success: function (obj, textstatus) {
+        if( !('error' in obj) ) {
+            yourVariable = obj.result;
+        }
+        else {
+            console.log(obj.error);
+        }
+    }
+}); // Debug.
 window.onkeypress = () => flight = jump;
