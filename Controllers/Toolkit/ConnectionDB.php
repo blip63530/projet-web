@@ -249,7 +249,7 @@ class ConnectionDB
     public static function GetMessages($UIDReceiver)
     {
         $conn = ConnectionDB::connectDB();
-        $query = "SELECT Messages.Message, Comptes.Name AS NomExpediteur 
+        $query = "SELECT Messages.Message, Messages.MID, Comptes.Name AS NomExpediteur 
                   FROM Messages 
                   INNER JOIN Comptes ON Messages.UIDSender = Comptes.UID 
                   WHERE Messages.UIDReceiver = ?";
@@ -280,5 +280,14 @@ class ConnectionDB
         return $messages;
     }
 
+    public static function DeleteMessage($MID){
+        $conn = ConnectionDB::connectDB();
+        $stmt = mysqli_prepare($conn, "DELETE FROM `Messages` WHERE MID = ?");
+        mysqli_stmt_bind_param($stmt, "i", $MID);
+        /* execute query */
+        mysqli_stmt_execute($stmt);
 
+        $stmt->close();
+        $conn->close();
+    }
 }
