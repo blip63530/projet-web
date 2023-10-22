@@ -30,7 +30,13 @@ class userController extends MainController{
     function EnvoyerMessage($message,$login,$destinataire){
         $uidDestinataire=connectionDB::getuid($destinataire);
         $uidEnvoi=connectionDB::getuid($login);
-        connectionDB::SendMessage($uidEnvoi,$uidDestinataire,$message);
+        if(!empty($uidDestinataire)){
+            connectionDB::SendMessage($uidEnvoi,$uidDestinataire,$message);
+        }else{
+            $_SESSION['alert'] = [
+                "message" => "Destinataire inconnu.",
+                "type" => "alert-danger" ];
+        }
     }
 
     public function getMessages() {

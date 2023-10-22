@@ -3,7 +3,7 @@ require_once("./models/gameModel.php");
 require_once("./Controllers/gameController.php");
 require_once("./Controllers/Toolkit/Securite.php");
 require_once("./Controllers/userController.php");
-require_once("./Controllers/visitorController.php");
+//require_once("./Controllers/visitorController.php");
 require_once("./models/userModel.php");
 $mainController = new userController();
 session_start();
@@ -47,6 +47,9 @@ try {
         case "snake":
             $mainController->snake();
             break;
+       /*case "minesweeper":
+            $mainController->minesweeper();
+            break;*/
         case "classement":
             $mainController->classement();
             break;
@@ -67,11 +70,12 @@ try {
             $destinataire = Securite::secureHTML($_POST['subjectname']);
             $message = Securite::secureHTML($_POST['message']);
             $login = $_SESSION['login'];
-            $mainController->EnvoyerMessage($message, $login, $destinataire);
-            $_SESSION['alert'] = [
-                "message" => "Message envoyé",
-                "type" => "alert-success"
-            ];
+            $mainController->EnvoyerMessage($message,$login,$destinataire);
+            if(empty($_SESSION['alert'])){
+                $_SESSION['alert'] = [
+                    "message" => "Profil mis à jour.",
+                    "type" => "alert-success" ];
+            }
             $mainController->profile();
             break;
         case "authentifier":
@@ -103,11 +107,12 @@ try {
             $ville = Securite::secureHTML($_POST['city']);
             $desc = Securite::secureHTML($_POST['desc']);
             $login = $_SESSION['login'];
-            $mainController->majprofil($ville, $desc, $login);
-            $_SESSION['alert'] = [
-                "message" => "Profil mis à jour.",
-                "type" => "alert-success"
-            ];
+            $mainController->majprofil($ville,$desc,$login);
+            if(empty($_SESSION['alert'])){
+                $_SESSION['alert'] = [
+                    "message" => "Profil mis à jour.",
+                    "type" => "alert-success" ];
+            }
             $mainController->profile();
             break;
 
