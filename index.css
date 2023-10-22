@@ -3,6 +3,10 @@
     font-size: 15px;
 }
 
+h2 {
+    font-family: 'Press Start 2P', cursive; /* Ajoutez la police 'Press Start 2P' et 'cursive' comme police de secours */
+}
+
 body {
     height: 100%;
 
@@ -31,7 +35,7 @@ ol {
     background: #252525;
     clear: both;
     padding: 18px 0;
-    border-bottom: 1px solid #ffb320;
+    border-bottom: 2px solid #ffb320;
 }
 
 .site-logo {
@@ -340,7 +344,7 @@ h1floppy {
 }
 
 .contact .map iframe {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: #ffb320 0px 0px 0px 3px;
     width: 100%;
     height: 33vh;
 }
@@ -356,13 +360,10 @@ h1floppy {
 
 
 
+/* -----------------------------------------------Acceuil---------------------------------------------------------- */
 
 
 
-.mySlides {
-    margin: 0 auto;
-    border-radius: 15%;
-}
 
 .w3-content {
     display: flex;
@@ -370,6 +371,31 @@ h1floppy {
     justify-content: center;
     height: 100vh;
     /* Cela assure que la div parent a une hauteur de 100% de la vue */
+}
+
+.mySlides {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+}
+
+.mySlides img {
+    max-width: 100%; /* Assurez-vous que l'image ne dépasse pas la largeur du conteneur */
+    max-height: 100%; /* Assurez-vous que l'image ne dépasse pas la hauteur du conteneur */
+    border: 6mm ridge #f4bf55;
+}
+
+.game-info {
+    margin-top: 20px; /* Espace entre l'image et les informations du jeu */
+}
+
+.game-button {
+    margin-top: 1rem;
 }
 
 
