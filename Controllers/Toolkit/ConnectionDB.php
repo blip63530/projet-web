@@ -225,10 +225,10 @@ class ConnectionDB
     public static function GetMessages($UIDReceiver)
     {
         $conn = ConnectionDB::connectDB();
-        $query = "SELECT Message,Comptes.Name 
-        FROM Messages
-        INNER JOIN Comptes ON Messages.UIDSender = Comptes.UID
-        WHERE UIDReceiver = ?";
+        $query = "SELECT Messages.Message, Comptes.Name AS NomExpediteur 
+                  FROM Messages 
+                  INNER JOIN Comptes ON Messages.UIDSender = Comptes.UID 
+                  WHERE Messages.UIDReceiver = ?";
 
         // Préparez la requête SQL avec l'ID du joueur
         $stmt = $conn->prepare($query);

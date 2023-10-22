@@ -1,5 +1,10 @@
 <!--header-->
-
+<style>
+    .main-menu ul li a {
+        font-size: 12px;
+        margin-left: 10px;
+    }
+</style>
 <header class="header-section">
     <div class="container">
         <!-- logo -->
@@ -22,8 +27,9 @@
                 </div>
                 <li><a href="index.php?page=classement">Classements</a></li>
                 <li><a href="index.php?page=contact">Contact</a></li>
-                <li><a href ="index.php?page=deconnection">Se déconnecter</a></li>
-                <li><a href ="index.php?page=profile">Mon Profil</a></li>
+                <li><a href="index.php?page=deconnection">Se déconnecter</a></li>
+                <li><a href="index.php?page=profile">Mon Profil</a></li>
+                <li><a href="index.php?page=messages">Messages</a></li>
             </ul>
         </nav>
     </div>

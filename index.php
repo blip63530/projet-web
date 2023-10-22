@@ -10,7 +10,7 @@ session_start();
 
 
 try {
-    
+
     if (empty($_GET['page'])) {
         $page = "acceuil";
     } else {
@@ -32,6 +32,9 @@ try {
         case "profile":
             $mainController->profile();
             break;
+        case "messages":
+            $mainController->messages();
+            break;
         case "modifier":
             $mainController->modifierprofil();
             break;
@@ -52,8 +55,9 @@ try {
             session_start();
             $_SESSION['alert'] = [
                 "message" => "Déconnecté, A bientôt!",
-                "type" => "alert-success" ];
-            
+                "type" => "alert-success"
+            ];
+
             $mainController->accueil();
             break;
         case "envoyerMSG":
@@ -63,10 +67,11 @@ try {
             $destinataire = Securite::secureHTML($_POST['subjectname']);
             $message = Securite::secureHTML($_POST['message']);
             $login = $_SESSION['login'];
-            $mainController->EnvoyerMessage($message,$login,$destinataire);
+            $mainController->EnvoyerMessage($message, $login, $destinataire);
             $_SESSION['alert'] = [
                 "message" => "Message envoyé",
-                "type" => "alert-success" ];
+                "type" => "alert-success"
+            ];
             $mainController->profile();
             break;
         case "authentifier":
@@ -75,19 +80,20 @@ try {
                 $password = Securite::secureHTML($_POST['password']);
                 if (($user = $mainController->validation_login($login, $password)) != null) {
                     //$mainController = new userController($login);
-                    $_SESSION['login']=$login;
-                    $_SESSION['uid']=ConnectionDB::getuid($login);
+                    $_SESSION['login'] = $login;
+                    $_SESSION['uid'] = ConnectionDB::getuid($login);
                     $mainController->creerUser($login);
                     $_SESSION['alert'] = [
                         "message" => "Connecté",
-                        "type" => "alert-success" ];
+                        "type" => "alert-success"
+                    ];
                     $mainController->accueil();
-                    
                 }
             } else {
                 $_SESSION['alert'] = [
                     "message" => "Indentifiants non complets",
-                    "type" => "alert-danger" ];
+                    "type" => "alert-danger"
+                ];
                 $mainController->authentification();
                 /*Toolbox::ajouterMessageAlerte("Login ou mot de passe non renseigné", Toolbox::COULEUR_ROUGE);
                     header('Location: '.URL."login");*/
@@ -97,41 +103,44 @@ try {
             $ville = Securite::secureHTML($_POST['city']);
             $desc = Securite::secureHTML($_POST['desc']);
             $login = $_SESSION['login'];
-            $mainController->majprofil($ville,$desc,$login);
+            $mainController->majprofil($ville, $desc, $login);
             $_SESSION['alert'] = [
                 "message" => "Profil mis à jour.",
-                "type" => "alert-success" ];
+                "type" => "alert-success"
+            ];
             $mainController->profile();
             break;
 
         case "inscrire":
             //echo $_POST["login"], $_POST["password"], $_POST["passwordcheck"], $_POST["email"];
-            if (!empty($_POST["login"]) && !empty($_POST['password']) && !empty($_POST['passwordcheck'] && !empty($_POST['email']) && ($_POST['passwordcheck']==$_POST['password']))) {
+            if (!empty($_POST["login"]) && !empty($_POST['password']) && !empty($_POST['passwordcheck'] && !empty($_POST['email']) && ($_POST['passwordcheck'] == $_POST['password']))) {
 
                 $login = Securite::secureHTML($_POST['login']);
                 $password = Securite::secureHTML($_POST['password']);
-                $email =Securite::secureHTML($_POST['email']);
-                $passwordcheck=Securite::secureHTML($_POST['passwordcheck']);
-                $mainController->inscrire($login,$password,$email);
+                $email = Securite::secureHTML($_POST['email']);
+                $passwordcheck = Securite::secureHTML($_POST['passwordcheck']);
+                $mainController->inscrire($login, $password, $email);
                 $_SESSION['alert'] = [
                     "message" => "Compte crée: Veuillez vous connecter.",
-                    "type" => "alert-success" ];
+                    "type" => "alert-success"
+                ];
                 $mainController->authentification();
             } else {
-                
-                if($_POST['passwordcheck']!=$_POST['password']){ 
+
+                if ($_POST['passwordcheck'] != $_POST['password']) {
                     $_SESSION['alert'] = [
                         "message" => "Les mots de passe ne correspondent pas",
-                        "type" => "alert-danger" ];
-                } else{
+                        "type" => "alert-danger"
+                    ];
+                } else {
                     $_SESSION['alert'] = [
                         "message" => "Indentifiants non complets",
-                        "type" => "alert-danger" ];
+                        "type" => "alert-danger"
+                    ];
                 }
 
-                
-                $mainController->inscription();
 
+                $mainController->inscription();
             }
             break;
         default:

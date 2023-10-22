@@ -33,5 +33,10 @@ class userController extends MainController{
         connectionDB::SendMessage($uidEnvoi,$uidDestinataire,$message);
     }
 
+    public function getMessages() {
+        $uid = $_SESSION['uid'];
+        return ConnectionDB::GetMessages($uid);
+    }
+
 }
 ?>

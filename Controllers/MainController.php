@@ -96,6 +96,15 @@ private $template = "./views/common/template.php";
         ];
         $this->genererPage($data_page);
     }
+    public function messages(){
+        $data_page =[
+            "page_description"=>"Page de consultation de messages",
+            "page_title" => "messages",
+            "view"=> "./views/messages.php",
+            "template"=>"./views/common/template.php"
+        ];
+        $this->genererPage($data_page);
+    }
     public function envoiMSG(){
         //$datas = $this->mainManager->getDataX();
         $data_page = [
