@@ -175,19 +175,18 @@ document.addEventListener('click', () => gamePlaying = true);
 document.addEventListener('space', () => gamePlaying = true);
 window.onclick = () => flight = jump;
 window.oninput = () => flight = jump;
-window.onclick = () => jQuery.ajax({
-    type: "POST",
-    url: "./Controllers/Toolkit/ConnectionDB.php",
+/*window.onclick = () => { var data = { action: 'setscore', score: '1' };
+$.ajax({
+    url:"./views/flappy2.php",    //the page containing php script
+    type: "post",    //request type,
     dataType: 'json',
-    data: {functionname: 'set_gamescore', arguments: [1,bestScore]},
-
-    success: function (obj, textstatus) {
-        if( !('error' in obj) ) {
-            yourVariable = obj.result;
-        }
-        else {
-            console.log(obj.error);
-        }
+    data: {registration: "success", name: "xyz", email: "abc@gmail.com"},
+    success:function(result){
+        console.log(result.abc);
     }
-}); // Debug.
+});
+
+}; // Debug. */
+
 window.onkeypress = () => flight = jump;
+

@@ -1,7 +1,7 @@
 <?php
 require_once("./Controllers/Toolkit/ConnectionDB.php");
 class GameController {
-
+    
 
     public function __construct() {
 

@@ -115,7 +115,7 @@ class ConnectionDB
     }
     public static function set_gamescore($game, $score)
     {
-        $uid=$_SESSION['uid'];
+        $uid= 1; //$_SESSION['uid'];
         echo "bite bite";
         $conn = ConnectionDB::connectDB();
         mysqli_query($conn, "INSERT INTO `Scores` (`IDGAME`, `UID`, `ScoreNb`) VALUES ($game, $uid, $score)");
