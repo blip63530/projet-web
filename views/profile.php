@@ -24,7 +24,7 @@ $scores = $gameController->getScoresInfo();
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col col-lg-9 col-xl-7">
                     <div class="card">
-                        <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
+                        <div class=" text-white d-flex flex-row" style="background-color: #ffecc7; height:200px;">
 
                             <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
                                 <img src="img\gamer.png" alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2" style="width: 150px; z-index: 1">
@@ -48,7 +48,7 @@ $scores = $gameController->getScoresInfo();
                         <div class="card-body p-4 text-black">
                             <div class="mb-5">
                                 <p class="lead fw-normal mb-3">A propos</p>
-                                <div class="p-4" style="background-color: #f8f9fa;">
+                                <div class="p-4" style="background-color: blanchedalmond;">
                                     <p class="font-italic mb-1"><?php if(!empty($_SESSION['desc'])){echo $_SESSION['desc'];}?></p>
                                 </div>
                             </div>
