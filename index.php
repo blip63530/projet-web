@@ -47,7 +47,7 @@ try {
         case "snake":
             $mainController->snake();
             break;
-       /*case "minesweeper":
+            /*case "minesweeper":
             $mainController->minesweeper();
             break;*/
         case "classement":
@@ -70,13 +70,24 @@ try {
             $destinataire = Securite::secureHTML($_POST['subjectname']);
             $message = Securite::secureHTML($_POST['message']);
             $login = $_SESSION['login'];
-            $mainController->EnvoyerMessage($message,$login,$destinataire);
-            if(empty($_SESSION['alert'])){
+            $mainController->EnvoyerMessage($message, $login, $destinataire);
+            if (empty($_SESSION['alert'])) {
                 $_SESSION['alert'] = [
                     "message" => "Message envoyé.",
                     "type" => "alert-success" ];
             }
             $mainController->profile();
+            break;
+        case "delete":
+            if(isset($_GET['MID']) && !empty($_GET['MID'])) {
+                $MID = $_GET['MID'];
+                ConnectionDB::DeleteMessage($MID);
+                header('Location: index.php?page=messages');
+                exit();
+            } else {
+                header('Location: index.php?page=messages');
+                exit();
+            }
             break;
         case "authentifier":
             if (!empty($_POST["login"]) && !empty($_POST['password'])) {
@@ -107,11 +118,12 @@ try {
             $ville = Securite::secureHTML($_POST['city']);
             $desc = Securite::secureHTML($_POST['desc']);
             $login = $_SESSION['login'];
-            $mainController->majprofil($ville,$desc,$login);
-            if(empty($_SESSION['alert'])){
+            $mainController->majprofil($ville, $desc, $login);
+            if (empty($_SESSION['alert'])) {
                 $_SESSION['alert'] = [
                     "message" => "Profil mis à jour.",
-                    "type" => "alert-success" ];
+                    "type" => "alert-success"
+                ];
             }
             $mainController->profile();
             break;

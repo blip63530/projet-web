@@ -70,7 +70,7 @@ $messages = $userController->getMessages();
                 echo "<tr>";
                 echo "<td>{$message['NomExpediteur']}</td>";
                 echo "<td>{$message['Message']}</td>";
-                echo "<td><a href='index.php?page=envoyerMSG'><i class='fa fa-reply icon' aria-hidden='true'></i></a> <a href='#'><i class='fa fa-trash icon' aria-hidden='true'></i></a></td>"; // Nouvelle colonne pour les icônes
+                echo "<td><a href='index.php?page=envoyerMSG'><i class='fa fa-reply icon' aria-hidden='true'></i></a> <a href='index.php?page=delete&MID={$message['MID']}'><i class='fa fa-trash icon' aria-hidden='true'></i></a></td>"; // Nouvelle colonne pour les icônes
                 echo "</tr>";
             }
             ?>
