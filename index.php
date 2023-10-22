@@ -32,6 +32,9 @@ try {
         case "profile":
             $mainController->profile();
             break;
+        case "modifier":
+            $mainController->modifierprofil();
+            break;
         case "contact":
             $mainController->contact();
             break;
@@ -78,6 +81,16 @@ try {
                     header('Location: '.URL."login");*/
             }
             break;
+        case "majprofil":
+            $ville = Securite::secureHTML($_POST['city']);
+            $desc = Securite::secureHTML($_POST['desc']);
+            $login = $_SESSION['login'];
+            $mainController->majprofil($ville,$desc,$login);
+            $_SESSION['alert'] = [
+                "message" => "Profil mis à jour.",
+                "type" => "alert-success" ];
+            $mainController->profile();
+
         case "inscrire":
             //echo $_POST["login"], $_POST["password"], $_POST["passwordcheck"], $_POST["email"];
             if (!empty($_POST["login"]) && !empty($_POST['password']) && !empty($_POST['passwordcheck'] && !empty($_POST['email']) && ($_POST['passwordcheck']==$_POST['password']))) {

@@ -132,4 +132,38 @@ class ConnectionDB
         mysqli_stmt_fetch($stmt);
         return $uid;
     }
+    public static function majProfile($ville,$desc,$login){
+        $conn = ConnectionDB::connectDB();
+        $stmt = mysqli_prepare($conn, "UPDATE Comptes SET Description=?, Ville=? WHERE Name=?");
+        mysqli_stmt_bind_param($stmt, 'sss',$desc,$ville,$login);
+        /* execute query */
+        mysqli_stmt_execute($stmt);
+
+    }
+    public static function getDesc($login){
+        $conn = ConnectionDB::connectDB();
+        $stmt = mysqli_prepare($conn, "SELECT Description FROM Comptes WHERE Name=?");
+        mysqli_stmt_bind_param($stmt, 's',$login);
+        /* execute query */
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $desc);
+
+        /* fetch value */
+        mysqli_stmt_fetch($stmt);
+
+        return $desc;
+    }
+    public static function getVille($login){
+        $conn = ConnectionDB::connectDB();
+        $stmt = mysqli_prepare($conn, "SELECT Ville FROM Comptes WHERE Name=?");
+        mysqli_stmt_bind_param($stmt, 's',$login);
+        /* execute query */
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $ville);
+
+        /* fetch value */
+        mysqli_stmt_fetch($stmt);
+
+        return $ville;
+    }
 }
