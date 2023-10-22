@@ -90,6 +90,7 @@ try {
                 "message" => "Profil mis à jour.",
                 "type" => "alert-success" ];
             $mainController->profile();
+            break;
 
         case "inscrire":
             //echo $_POST["login"], $_POST["password"], $_POST["passwordcheck"], $_POST["email"];
