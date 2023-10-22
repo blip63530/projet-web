@@ -64,9 +64,11 @@ try {
             $message = Securite::secureHTML($_POST['message']);
             $login = $_SESSION['login'];
             $mainController->EnvoyerMessage($message,$login,$destinataire);
-            $_SESSION['alert'] = [
-                "message" => "Message envoyé",
-                "type" => "alert-success" ];
+            if(empty($_SESSION['alert'])){
+                $_SESSION['alert'] = [
+                    "message" => "Profil mis à jour.",
+                    "type" => "alert-success" ];
+            }
             $mainController->profile();
             break;
         case "authentifier":
@@ -98,9 +100,11 @@ try {
             $desc = Securite::secureHTML($_POST['desc']);
             $login = $_SESSION['login'];
             $mainController->majprofil($ville,$desc,$login);
-            $_SESSION['alert'] = [
-                "message" => "Profil mis à jour.",
-                "type" => "alert-success" ];
+            if(empty($_SESSION['alert'])){
+                $_SESSION['alert'] = [
+                    "message" => "Profil mis à jour.",
+                    "type" => "alert-success" ];
+            }
             $mainController->profile();
             break;
 
