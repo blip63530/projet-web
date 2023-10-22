@@ -44,6 +44,16 @@ try {
         case "classement":
             $mainController->classement();
             break;
+        case "deconnection":
+            session_destroy();
+            session_start();
+            $_SESSION['alert'] = [
+                "message" => "Déconnecté, A bientôt!",
+                "type" => "alert-success" ];
+            
+            $mainController->accueil();
+            break;
+
         case "authentifier":
             if (!empty($_POST["login"]) && !empty($_POST['password'])) {
                 $login = Securite::secureHTML($_POST['login']);
@@ -53,11 +63,17 @@ try {
                     $_SESSION['login']=$login;
                     $_SESSION['uid']=ConnectionDB::getuid($login);
                     $mainController->creerUser($login);
+                    $_SESSION['alert'] = [
+                        "message" => "Connecté",
+                        "type" => "alert-success" ];
                     $mainController->accueil();
                     
                 }
             } else {
-                echo "identifiants non complets";
+                $_SESSION['alert'] = [
+                    "message" => "Indentifiants non complets",
+                    "type" => "alert-danger" ];
+                $mainController->authentification();
                 /*Toolbox::ajouterMessageAlerte("Login ou mot de passe non renseigné", Toolbox::COULEUR_ROUGE);
                     header('Location: '.URL."login");*/
             }
@@ -71,11 +87,25 @@ try {
                 $email =Securite::secureHTML($_POST['email']);
                 $passwordcheck=Securite::secureHTML($_POST['passwordcheck']);
                 $mainController->inscrire($login,$password,$email);
+                $_SESSION['alert'] = [
+                    "message" => "Compte crée: Veuillez vous connecter.",
+                    "type" => "alert-success" ];
                 $mainController->authentification();
             } else {
-                echo "identifiants non complets";
-                /*Toolbox::ajouterMessageAlerte("Login ou mot de passe non renseigné", Toolbox::COULEUR_ROUGE);
-                        header('Location: '.URL."login");*/
+                
+                if($_POST['passwordcheck']!=$_POST['password']){ 
+                    $_SESSION['alert'] = [
+                        "message" => "Les mots de passe ne correspondent pas",
+                        "type" => "alert-danger" ];
+                } else{
+                    $_SESSION['alert'] = [
+                        "message" => "Indentifiants non complets",
+                        "type" => "alert-danger" ];
+                }
+
+                
+                $mainController->inscription();
+
             }
             break;
         default:

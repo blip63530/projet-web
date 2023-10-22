@@ -16,6 +16,7 @@
 
 <body class="d-flex flex-column min-vh-100">
     <!-- slideshow -->
+   <?php //var_dump($_SESSION); ?>
     <div class="w3-content w3-display-container">
         <div class="mySlides">
             <img src="img/index/flappy.png" width="800" height="500">

@@ -13,8 +13,22 @@
 
 </head>
 <body class="d-flex flex-column min-vh-100" >
-<?php require_once("views/common/header.php"); ?>
+<?php 
+if(!empty($_SESSION['login'])) {
+  require_once("views/common/connected/header.php"); 
+} else{
+  require_once("views/common/header.php"); 
+}
 
+if(!empty($_SESSION["alert"])): ?>
+  <div class="alert <?= $_SESSION['alert']['type'];?>" role="alert">
+    <?=$_SESSION['alert']['message'];?>
+</div>
+<?php
+ unset($_SESSION['alert']);
+endif;
+
+?>
 
 
 

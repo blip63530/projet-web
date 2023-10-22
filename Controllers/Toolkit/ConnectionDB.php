@@ -62,7 +62,6 @@ class ConnectionDB
         $passwordhash = Securite::derivateKey($pw,$salt);
         $stmt = mysqli_prepare($conn, "SELECT Name FROM Comptes WHERE PW=? AND Name=?");
         mysqli_stmt_bind_param($stmt, 'ss', $passwordhash, $nom);
-
         /* execute query */
         mysqli_stmt_execute($stmt);
 
@@ -71,10 +70,10 @@ class ConnectionDB
 
         /* fetch value */
         mysqli_stmt_fetch($stmt);
+        
 
 
         if ($nom == $validation) {
-            echo "ok connection";
             return (true);
         } else
             echo "not ok - Mot de passe invalide";
@@ -116,7 +115,6 @@ class ConnectionDB
     public static function set_gamescore($game, $score)
     {
         $uid= 1; //$_SESSION['uid'];
-        echo "bite bite";
         $conn = ConnectionDB::connectDB();
         mysqli_query($conn, "INSERT INTO `Scores` (`IDGAME`, `UID`, `ScoreNb`) VALUES ($game, $uid, $score)");
 
@@ -124,7 +122,16 @@ class ConnectionDB
 
     public static function getuid($login){
         $conn = ConnectionDB::connectDB();
-        $uid = mysqli_query($conn,"SELECT UID FROM Comptes WHERE Name=$login;");
+        $stmt = mysqli_prepare($conn, "SELECT UID FROM Comptes WHERE Name=?");
+        mysqli_stmt_bind_param($stmt, 's', $login);
+        /* execute query */
+        mysqli_stmt_execute($stmt);
+
+        /* bind result variables */
+        mysqli_stmt_bind_result($stmt, $uid);
+
+        /* fetch value */
+        mysqli_stmt_fetch($stmt);
         return $uid;
     }
 }

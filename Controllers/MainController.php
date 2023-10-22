@@ -6,12 +6,10 @@ class MainController{
     }
 private $template = "./views/common/template.php";
     protected function genererPage($data){
-        //echo "classic";
         extract($data);
         ob_start();
         require_once ($view);
         $page_content = ob_get_clean();
-        //require_once ($this->$template);
 
     }
 
@@ -35,12 +33,12 @@ private $template = "./views/common/template.php";
     }
 
     function validation_login($login,$pw){
-        if(ConnectionDB::connection($login,$pw)){
+        if($reponse=ConnectionDB::connection($login,$pw)){
             $_SESSION['profil']=[
                 "login"=>$login,
             ];
         }
-        return(ConnectionDB::connection($login,$pw));
+        return($reponse);
     }
     function inscrire($login,$pw,$email){
         [$salt,$hash] = Securite::HashKey($pw);
@@ -53,10 +51,6 @@ private $template = "./views/common/template.php";
 
     public function accueil(){
         //$datas = $this->mainManager->getDataX();
-        $_SESSION['alert'] = [
-            "message" => "message",
-            "type" => "alert-danger"
-        ];
         $data_page = [
             "page_description"=>"page d'acceuil",
             "page_title" => "acceuil",
