@@ -1,6 +1,7 @@
 <!--header-->
 
 <header class="header-section">
+    <link rel="icon" type="image/x-icon" href="/img/lgg%20-%20Copy.png">
     <div class="container">
         <!-- logo -->
         <a class="site-logo" href="index.php?page=acceuil">
