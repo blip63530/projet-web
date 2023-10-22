@@ -38,7 +38,9 @@ class ConnectionDB
         mysqli_stmt_bind_result($stmt, $salt);
         mysqli_stmt_fetch($stmt);
         if ($salt == "") {
-            echo "Aucun compte trouvé";
+            $_SESSION['alert'] = [
+                "message" => "Nom de compte invalide",
+                "type" => "alert-danger" ];
             return false;
         } else
         return $salt;
@@ -55,6 +57,9 @@ class ConnectionDB
     {
         $validation = "noresult";
         $salt = ConnectionDB::getSalt($nom);
+        if($salt==false){
+            return false;
+        }
         $conn = ConnectionDB::connectDB();
 
         $passwordhash = Securite::derivateKey($pw,$salt);
@@ -74,7 +79,9 @@ class ConnectionDB
         if ($nom == $validation) {
             return (true);
         } else
-            echo "not ok - Mot de passe invalide";
+            $_SESSION['alert'] = [
+                "message" => "Mot de passe ou identifiant invalide.",
+                "type" => "alert-danger" ];
         return (false);
     }
 

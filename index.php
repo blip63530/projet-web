@@ -73,7 +73,7 @@ try {
             $mainController->EnvoyerMessage($message,$login,$destinataire);
             if(empty($_SESSION['alert'])){
                 $_SESSION['alert'] = [
-                    "message" => "Profil mis à jour.",
+                    "message" => "Message envoyé.",
                     "type" => "alert-success" ];
             }
             $mainController->profile();

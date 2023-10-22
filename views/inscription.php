@@ -33,11 +33,6 @@
                         <label for="email" class="form-label">Mail:</label>
                         <input type="email" class="form-control" id="email" placeholder="Entrez votre mail" name="email" autocomplete="email">
                     </div>
-                    <div class="form-check mb-3">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" name="remember"> Se souvenir de moi
-                        </label>
-                    </div>
                     <button type="submit" class="btn btn-primary">S'inscrire</button>
                 </form>
             </div>
