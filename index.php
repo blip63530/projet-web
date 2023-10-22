@@ -70,7 +70,7 @@ try {
                 $password = Securite::secureHTML($_POST['password']);
                 $email =Securite::secureHTML($_POST['email']);
                 $passwordcheck=Securite::secureHTML($_POST['passwordcheck']);
-                $userController->inscrire($login,$password,$email);
+                $mainController->inscrire($login,$password,$email);
                 $mainController->authentification();
             } else {
                 echo "identifiants non complets";
