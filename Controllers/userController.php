@@ -44,5 +44,7 @@ class userController extends MainController{
         return ConnectionDB::GetMessages($uid);
     }
 
+
+
 }
 ?>
