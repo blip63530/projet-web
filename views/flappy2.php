@@ -2,62 +2,64 @@
 
 include_once("./Controllers/Toolkit/ConnectionDB.php");
 // Obtenez les données du jeu
-$data=ConnectionDB::getGameInfo(1);
+$data = ConnectionDB::getGameInfo(1);
 //$gameModel->set_gamescore();
 ?>
 
 <!DOCTYPE html>
 <html>
-  <head>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-      <script src="../scripts/jquery-3.7.1.min.js"></script>
-      <title>Flappy Bird using JS | by learnWD</title>
-      <!-- Style sheets -->
-      <link href="../css/flappy2.css" rel="stylesheet">
-      <link href="../index.css" rel ="stylesheet">
-  </head>
-  <body>
-  <div class="jeux_score">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../scripts/jquery-3.7.1.min.js"></script>
+    <title>Flappy Bird using JS | by learnWD</title>
+    <!-- Style sheets -->
+    <link href="../css/flappy2.css" rel="stylesheet">
+    <link href="../index.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="jeux_score">
 
 
-  <div class="page_flappy">
-      <div class="score-container">
-          <div id="bestScore"></div>
-          <div id="currentScore"></div>
-      </div>
+        <div class="page_flappy">
+            <div class="score-container">
+                <div id="bestScore"></div>
+                <div id="currentScore"></div>
+            </div>
 
-      <canvas id="canvas" width="431" height="768"></canvas>
-   
- <script src="../scripts/flappy2.js"></script>
-  </div>
-  <div class="scoress">
-      <section id="classement">
-          <div class="game-info">
-              <h1><?= $data['gameName'] ?></h1>
-              <!-- L'image du jeu peut être ajoutée ici -->
-              <!-- <img src="chemin/vers/votre/image.jpg" alt="Nom du Jeu"> -->
-          </div>
-          <?php if (count($data['scores']) > 0): ?>
-              <table border='1'>
-                  <tr>
-                      <th>Nom du Joueur</th>
-                      <th>Score</th>
-                  </tr>
-                  <?php foreach ($data['scores'] as $score): ?>
-                      <tr>
-                          <td><?= $score['name'] ?></td>
-                          <td><?= $score['score'] ?></td>
-                      </tr>
-                  <?php endforeach; ?>
-              </table>
-          <?php else: ?>
-              <p>Aucun score trouvé pour ce jeu.</p>
-          <?php endif; ?>
-      </section>
+            <canvas id="canvas" width="431" height="768"></canvas>
+
+            <script src="../scripts/flappy2.js"></script>
+        </div>
+        <div class="scoress">
+            <section id="classement">
+                <div class="game-info">
+                    <h1><?= $data['gameName'] ?></h1>
+                    <!-- L'image du jeu peut être ajoutée ici -->
+                    <!-- <img src="chemin/vers/votre/image.jpg" alt="Nom du Jeu"> -->
+                </div>
+                <?php if (count($data['scores']) > 0) : ?>
+                    <table border='1'>
+                        <tr>
+                            <th>Nom du Joueur</th>
+                            <th>Score</th>
+                        </tr>
+                        <?php foreach ($data['scores'] as $score) : ?>
+                            <tr>
+                                <td><?= $score['name'] ?></td>
+                                <td><?= $score['score'] ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </table>
+                <?php else : ?>
+                    <p>Aucun score trouvé pour ce jeu.</p>
+                <?php endif; ?>
+            </section>
 
 
 
-      <!--
+            <!--
     <p id="pscorres">scores</p>
       <table>
       <tbody id="tabscores">
@@ -66,9 +68,9 @@ $data=ConnectionDB::getGameInfo(1);
       </table>
 -->
 
-  </div>
-  </div>
-<!--
+        </div>
+    </div>
+    <!--
   <script>
       document.addEventListener("DOMContentLoaded", () => {
           //call ajax
@@ -110,6 +112,6 @@ $data=ConnectionDB::getGameInfo(1);
 
   </script>
   -->
-  </body>
+</body>
 
 </html>

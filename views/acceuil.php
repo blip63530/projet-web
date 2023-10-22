@@ -32,9 +32,8 @@
 
     <div class="w3-content w3-display-container">
         <img class="mySlides" src="img/index/flappy.png" width="800" height="500">
-        <img class="mySlides" src="img/index/ex2.jpg" style="width:100%">
-        <img class="mySlides" src="img/index/ex3.jpg" style="width:100%">
-        <img class="mySlides" src="img/index/ex1.jpg" style="width:100%">
+        <img class="mySlides" src="img/index/snake.png" width="800" height="500">
+
 
         <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
         <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
