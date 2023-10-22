@@ -136,5 +136,14 @@ private $template = "./views/common/template.php";
         $this->genererPage($data_page);
     }
 
+    public function minesweeper(){
+        $data_page =[
+            "page_description"=>"un super jeu pour devenir gros",
+            "page_title" => "snake",
+            "view"=> "./views/minesweeper.php",
+            "template"=>"./views/common/template.php"
+        ];
+        $this->genererPage($data_page);
+    }
 
 }
