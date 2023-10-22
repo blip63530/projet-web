@@ -74,12 +74,14 @@ private $template = "./views/common/template.php";
 
     
     public function profile(){
+        
         $data_page =[
             "page_description"=>"Page du profil",
             "page_title" => "profile",
             "view"=> "./views/profile.php",
             "template"=>"./views/common/template.php"
         ];
+        $this->genererPage($data_page);
     }
 
     public function contact(){

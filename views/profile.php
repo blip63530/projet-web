@@ -4,9 +4,8 @@
 <link rel="stylesheet" href="index.css">
 
 <?PHP 
-$curPageName = $_SERVER['HTTP_REFERER'];
-$query = parse_url($curPageName);
-parse_str($query,$id);
+
+
 
 ?>
 <head>
@@ -15,27 +14,6 @@ parse_str($query,$id);
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    <header class="header-section">
-        <div class="container">
-            <!-- logo -->
-            <a class="site-logo" href="../index.php">
-                <img src="img\lgg.png" alt="">
-            </a>
-            <div class="user-panel">
-                <a href="authentification.php">Se connecter</a> / <a href="#">Inscription</a>
-            </div>
-
-            <!--  menu site -->
-            <nav class="main-menu">
-                <ul>
-                    <li><a href="../index.php">Accueil</a></li>
-                    <li><a href="jeux.php">Jeux</a></li>
-                    <li><a href="classements.php">Classements</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
     <!-- Section du profile -->
 
@@ -53,7 +31,7 @@ parse_str($query,$id);
                                 </button>
                             </div>
                             <div class="ms-3" style="margin-top: 130px;">
-                                <h5><?php echo $id['IdName'];  ?></h5>
+                                <h5><?php echo $_SESSION['login']  ?></h5>
                                 <p>Limoges</p>
                             </div>
                         </div>
