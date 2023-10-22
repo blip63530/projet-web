@@ -20,7 +20,7 @@
                     <div class="dropdown-content">
                         <a href="index.php?page=floppy">Floppy</a>
                         <a href="index.php?page=snake">Snake</a>
-                        <a href="index.php?page=minesweeper">Snake</a>
+                        <a href="index.php?page=minesweeper">minesweeper</a>
                     </div>
                 </div>
                 <li><a href="index.php?page=classement">Classements</a></li>

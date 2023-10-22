@@ -116,16 +116,40 @@ class ConnectionDB
     {
         switch ($game){
             case $game==1;
+                if(!empty($_COOKIE['highscore']))
                 $score=$_COOKIE['highscore'];
+                else{
+                    $score=0;
+                }
                 break;
                 case $game==2;
-                    $score=$_COOKIE['highscoresnake'];
+                    if(!empty($_COOKIE['highscoresnake']))
+                        $score=$_COOKIE['highscoresnake'];
+                    else{
+                        $score=0;
+                    }
                     break;
         }
         if(!empty($_SESSION['uid'])) {
             $uid = $_SESSION['uid'];
             $conn = ConnectionDB::connectDB();
-            mysqli_query($conn, "INSERT INTO `Scores` (`IDGAME`, `UID`, `ScoreNb`) VALUES ($game, $uid, $score)");
+
+            $scoresQuery = "SELECT ScoreNb FROM Scores WHERE IDGAME = $game AND UID = $uid 
+                            ORDER BY ScoreNb DESC
+                            LIMIT 1;";
+            $scoresResult = $conn->query($scoresQuery);
+            $scoresResult = $scoresResult->fetch_array();
+            if ($scoresResult[0] ==''){
+                mysqli_query($conn, "INSERT INTO `Scores` (`IDGAME`, `UID`, `ScoreNb`) VALUES ($game, $uid, $score)");
+
+            }
+            else if($scoresResult[0]<$score){
+                mysqli_query($conn, "INSERT INTO `Scores` (`IDGAME`, `UID`, `ScoreNb`) VALUES ($game, $uid, $score)");
+
+            }
+
+
+           // mysqli_query($conn, "INSERT INTO `Scores` (`IDGAME`, `UID`, `ScoreNb`) VALUES ($game, $uid, $score)");
         }
     }
 

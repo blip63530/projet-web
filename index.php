@@ -44,6 +44,9 @@ try {
         case "snake":
             $mainController->snake();
             break;
+       /*case "minesweeper":
+            $mainController->minesweeper();
+            break;*/
         case "classement":
             $mainController->classement();
             break;
