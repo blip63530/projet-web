@@ -96,6 +96,16 @@ private $template = "./views/common/template.php";
         ];
         $this->genererPage($data_page);
     }
+    public function envoiMSG(){
+        //$datas = $this->mainManager->getDataX();
+        $data_page = [
+            "page_description"=>"page d'acceuil",
+            "page_title" => "acceuil",
+            "view"=> "./views/envoiMessage.php",
+            "template"=>"./views/common/template.php"
+        ];
+        $this->genererPage($data_page);
+    }
 
     public function contact(){
         $data_page = [

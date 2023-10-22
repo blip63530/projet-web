@@ -56,7 +56,19 @@ try {
             
             $mainController->accueil();
             break;
-
+        case "envoyerMSG":
+            $mainController->EnvoiMSG();
+            break;
+        case "sendMSG":
+            $destinataire = Securite::secureHTML($_POST['subjectname']);
+            $message = Securite::secureHTML($_POST['message']);
+            $login = $_SESSION['login'];
+            $mainController->EnvoyerMessage($message,$login,$destinataire);
+            $_SESSION['alert'] = [
+                "message" => "Message envoyé",
+                "type" => "alert-success" ];
+            $mainController->profile();
+            break;
         case "authentifier":
             if (!empty($_POST["login"]) && !empty($_POST['password'])) {
                 $login = Securite::secureHTML($_POST['login']);

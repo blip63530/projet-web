@@ -27,6 +27,11 @@ class userController extends MainController{
     function getUser(){
         return $this->usermodel;
     }
+    function EnvoyerMessage($message,$login,$destinataire){
+        $uidDestinataire=connectionDB::getuid($destinataire);
+        $uidEnvoi=connectionDB::getuid($login);
+        connectionDB::SendMessage($uidEnvoi,$uidDestinataire,$message);
+    }
 
 }
 ?>

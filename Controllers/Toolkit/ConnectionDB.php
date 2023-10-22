@@ -214,6 +214,46 @@ class ConnectionDB
         mysqli_stmt_execute($stmt);
 
     }
+    public static function SendMessage($UIDSender,$UIDReceiver,$message){
+        $conn = ConnectionDB::connectDB();
+        $stmt = mysqli_prepare($conn, "INSERT INTO `Messages` (`UIDSender`, `UIDReceiver`, `Message`) VALUES (?,?,?)");
+        mysqli_stmt_bind_param($stmt, 'sss', $UIDSender,$UIDReceiver,$message);
+        /* execute query */
+        mysqli_stmt_execute($stmt);
+    }
+    public static function GetMessages($UIDReceiver)
+    {
+        $conn = ConnectionDB::connectDB();
+        $query = "SELECT Message,Comptes.Name 
+        FROM Messages
+        INNER JOIN Comptes ON Messages.UIDSender = Comptes.UID
+        WHERE UIDReceiver = ?";
+
+        // Préparez la requête SQL avec l'ID du joueur
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s", $UIDReceiver); // "s" signifie chaîne (string)
+
+        // Exécutez la requête SQL
+        $stmt->execute();
+
+        // Récupérez les résultats de la requête
+        $result = $stmt->get_result();
+
+        // Initialisez un tableau pour stocker les données
+        $messages = array();
+
+        // Parcourez les résultats et stockez-les dans le tableau
+        while ($row = $result->fetch_assoc()) {
+            $messages[] = $row;
+        }
+
+        // Fermez la connexion à la base de données
+        $stmt->close();
+        $conn->close();
+
+        // Retournez les scores du joueur
+        return $messages;
+    }
 
 
 }

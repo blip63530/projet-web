@@ -1,6 +1,6 @@
 <?php
 $gameController = new GameController();
-$scores = $gameController->getScoresInfo($_SESSION['uid']);
+$scores = $gameController->getScoresInfo();
 ?>
 
 
@@ -41,7 +41,7 @@ $scores = $gameController->getScoresInfo($_SESSION['uid']);
                         <div class="p-4 text-black" style="background-color: #f8f9fa;">
                             <div class="d-flex justify-content-end text-center py-1">
                                 <div class="user-panel">
-                                    <a href="#">Envoyer un message</a>
+                                    <a href="index.php?page=envoyerMSG">Envoyer un message</a>
                                 </div>
                             </div>
                         </div>
