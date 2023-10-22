@@ -5,7 +5,7 @@ include_once("./Controllers/Toolkit/ConnectionDB.php");
 if(isset($_POST['action'])){
 if ($_POST['action'] == "setscore") { setscore(1,$_POST['score']);}}
 // Obtenez les données du jeu
-$data = ConnectionDB::getGameInfo(1);
+
 var_dump($data);
 //$gameModel->set_gamescore();
 
@@ -13,6 +13,7 @@ function setscore($uid,$score){
     echo "biteeee";
     ConnectionDB::set_gamescore($uid,$score);
 } */
+$data = ConnectionDB::getGameInfo(1);
 ?> 
 
 <!DOCTYPE html>
