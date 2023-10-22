@@ -3,7 +3,7 @@ require_once("./models/gameModel.php");
 require_once("./Controllers/gameController.php");
 require_once("./Controllers/Toolkit/Securite.php");
 require_once("./Controllers/userController.php");
-require_once("./Controllers/visitorController.php");
+//require_once("./Controllers/visitorController.php");
 require_once("./models/userModel.php");
 $mainController = new userController();
 session_start();
