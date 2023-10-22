@@ -450,3 +450,7 @@ td {
     border: solid;
     width: 65%;
 }
+
+snake{
+    z-index: 10;
+}

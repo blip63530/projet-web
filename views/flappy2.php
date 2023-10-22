@@ -14,6 +14,7 @@ function setscore($uid,$score){
     ConnectionDB::set_gamescore($uid,$score);
 } */
 $data = ConnectionDB::getGameInfo(1);
+ConnectionDB::set_gamescore(1);
 ?> 
 
 <!DOCTYPE html>

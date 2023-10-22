@@ -3,6 +3,8 @@ window.onload = function () {
   const canvasHeight = 600;
   const blockSize = 30; // en pixels
   const canvas = document.createElement("canvas");
+ // var canvasloc = document.getElementsByTagName("canvasloc")[0];
+  //canvasloc.appendChild(canvas);
   const ctx = canvas.getContext("2d");
   const widthInBlocks = canvasWidth / blockSize;
   const heightInBlocks = canvasHeight / blockSize;
@@ -13,6 +15,35 @@ window.onload = function () {
   let applee;
   let score;
   let timeout;
+  let bestScoresnake = 0;
+
+
+  //cookies score
+  function getCookie(cname)
+  {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++)
+    {
+      var c = ca[i].trim();
+      if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+    }
+    return "";
+  }
+
+  function setCookie(cname,cvalue,exdays)
+  {
+    var d = new Date();
+    d.setTime(d.getTime()+(exdays*24*60*60*1000));
+    var expires = "expires="+d.toGMTString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+  }
+  var savedscore = getCookie("highscoresnake");
+  if(savedscore != "")
+    bestScoresnake = parseInt(savedscore);
+
+
+
 
   init();
 
@@ -100,6 +131,12 @@ window.onload = function () {
     ctx.textBaseline = "middle";
     ctx.fillText(score.toString(), centreX, centreY);
     ctx.restore();
+
+    // check if it's the best score
+    bestScoresnake = Math.max(bestScoresnake, score);
+    setCookie("highscoresnake", bestScoresnake, 999);
+    document.getElementById('bestScore').innerHTML = `Best : ${bestScoresnake}`;
+    //document.getElementById('currentScore').innerHTML = `current : ${score}`;
   }
 
   function speedUp() {

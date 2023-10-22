@@ -110,9 +110,19 @@ class ConnectionDB
 
         return $data;
     }
-    public static function set_gamescore($game, $score)
+
+
+    public static function set_gamescore($game)
     {
-        $uid= 1; //$_SESSION['uid'];
+        switch ($game){
+            case $game==1;
+                $score=$_COOKIE['highscore'];
+                break;
+                case $game==2;
+                    $score=$_COOKIE['highscoresnake'];
+                    break;
+        }
+        $uid= $_SESSION['uid'];
         $conn = ConnectionDB::connectDB();
         mysqli_query($conn, "INSERT INTO `Scores` (`IDGAME`, `UID`, `ScoreNb`) VALUES ($game, $uid, $score)");
 
@@ -166,4 +176,6 @@ class ConnectionDB
 
         return $ville;
     }
+
+
 }
