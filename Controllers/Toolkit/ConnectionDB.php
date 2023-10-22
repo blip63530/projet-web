@@ -122,10 +122,11 @@ class ConnectionDB
                     $score=$_COOKIE['highscoresnake'];
                     break;
         }
-        $uid= $_SESSION['uid'];
-        $conn = ConnectionDB::connectDB();
-        mysqli_query($conn, "INSERT INTO `Scores` (`IDGAME`, `UID`, `ScoreNb`) VALUES ($game, $uid, $score)");
-
+        if(!empty($_SESSION['uid'])) {
+            $uid = $_SESSION['uid'];
+            $conn = ConnectionDB::connectDB();
+            mysqli_query($conn, "INSERT INTO `Scores` (`IDGAME`, `UID`, `ScoreNb`) VALUES ($game, $uid, $score)");
+        }
     }
 
     public static function getuid($login){
