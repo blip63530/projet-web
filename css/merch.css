@@ -1,0 +1,40 @@
+/* styles.css */
+* {
+    font-family: 'Press Start 2P';
+    font-size: 15px;
+}
+h2 {
+    font-family: 'Press Start 2P', cursive; /* Ajoutez la police 'Press Start 2P' et 'cursive' comme police de secours */
+}
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.image {
+    width: 30%; /* Pour que 3 images s'affichent côte à côte avec un peu d'espace */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+img {
+    width: 250px; /* Largeur fixe de 75 pixels */
+    height: 250px; /* Hauteur fixe de 75 pixels */
+}
+
+p {
+    
+    margin-top: 5px;
+}
+button {
+    background-color: #4CAF50; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Supprimer la bordure du bouton */
+    padding: 8px 16px; /* Remplissage intérieur */
+    cursor: pointer; /* Curseur en forme de main au survol */
+}
+
+button:hover {
+    background-color: #45a049; /* Changement de couleur au survol */
+}

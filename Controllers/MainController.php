@@ -62,7 +62,15 @@ private $template = "./views/common/template.php";
         ];
         $this->genererPage($data_page);
     }
-
+    public function boutique(){
+        $data_page = [
+            "page_description"=>"page d'acceuil",
+            "page_title" => "acceuil",
+            "view"=> "./views/merch.php",
+            "template"=>"./views/common/template.php"
+        ];
+        $this->genererPage($data_page);
+    }
 
     public function floppy(){
         $data_page =[

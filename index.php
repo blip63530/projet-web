@@ -50,6 +50,9 @@ try {
             /*case "minesweeper":
             $mainController->minesweeper();
             break;*/
+        case "boutique":
+            $mainController->boutique();
+            break;
         case "classement":
             $mainController->classement();
             break;

@@ -1,7 +1,7 @@
 <!--header-->
 
 <header class="header-section">
-    <link rel="icon" type="image/x-icon" href="/img/lgg%20-%20Copy.ico">
+    <link rel="icon" type="image/x-icon" href="/img/icon.png">
     <div class="container">
         <!-- logo -->
         <a class="site-logo" href="index.php?page=acceuil">

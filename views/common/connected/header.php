@@ -5,7 +5,7 @@
         margin-left: 10px;
     }
 </style>
-<link rel="icon" type="image/x-icon" href="/img/lgg%20-%20Copy.ico">
+<link rel="icon" type="image/x-icon" href="/img/icon.png">
 
 <header class="header-section">
     <div class="container">
