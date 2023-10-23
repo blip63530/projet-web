@@ -22,7 +22,7 @@
                 <div class="dropdown">
                     <button class="dropbtn">Jeux</button>
                     <div class="dropdown-content">
-                        <a href="index.php?page=floppy">Floppy</a>
+                        <a href="index.php?page=floppy">Flappy Bird</a>
                         <a href="index.php?page=snake">Snake</a>
                     </div>
                 </div>
