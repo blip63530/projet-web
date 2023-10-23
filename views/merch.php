@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="./css/merch.css">
 </head>
 <body>
-    <h1>Boutique</h1> <!-- Titre ajouté ici -->
+    <h1 class="merch">Boutique</h1> <!-- Titre ajouté ici -->
     <div class="image-container">
         <div class="image">
             <img src="./img/img merch/tshirt.png" alt="Image 1">

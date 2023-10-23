@@ -16,11 +16,19 @@ h2 {
     width: 30%; /* Pour que 3 images s'affichent côte à côte avec un peu d'espace */
     margin-bottom: 20px;
     text-align: center;
+
 }
 
-img {
+.image-container img {
     width: 250px; /* Largeur fixe de 75 pixels */
     height: 250px; /* Hauteur fixe de 75 pixels */
+    border: 3mm ridge #f4bf55;
+}
+
+h1.merch {
+    text-align: center;
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
 }
 
 p {

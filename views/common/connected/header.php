@@ -11,7 +11,7 @@
     <div class="container">
         <!-- logo -->
         <a class="site-logo" href="index.php?page=acceuil">
-            <img src="img\lgg.png" alt="">
+            <img class="none" src="img\lgg.png" alt="">
         </a>
 
 

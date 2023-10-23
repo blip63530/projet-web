@@ -5,7 +5,7 @@
     <div class="container">
         <!-- logo -->
         <a class="site-logo" href="index.php?page=acceuil">
-            <img src="img\lgg.png" alt="">
+            <img class="none" src="img\lgg.png" alt="">
         </a>
         <div class="user-panel">
             <a class="nav-link " href ="index.php?page=authentification">Se connecter</a> / <a href="index.php?page=inscription">Inscription</a>
