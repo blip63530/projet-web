@@ -17,7 +17,7 @@
 </head>
 <body>
     <section id="classement">
-
+        <div>
         <?php  $data = $gameController->getGameInfoid(1); ?>
         <div class="game-info">
             <h1><?= $data['gameName'] ?></h1>
@@ -42,8 +42,9 @@
         <?php else: ?>
             <p>Aucun score trouvé pour ce jeu.</p>
         <?php endif; ?>
+        </div>
 
-
+        <div>
         <?php  $data = $gameController->getGameInfoid(2); ?>
         <div class="game-info">
             <h1><?= $data['gameName'] ?></h1>
@@ -68,6 +69,7 @@
         <?php else: ?>
             <p>Aucun score trouvé pour ce jeu.</p>
         <?php endif; ?>
+        
     </section>
 </body>
 </html>

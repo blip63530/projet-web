@@ -34,22 +34,23 @@ ConnectionDB::set_gamescore(1);
 
 
         <div class="page_flappy">
-            <div class="score-container">
-                <div id="bestScore"></div>
-                <div id="currentScore"></div>
-            </div>
-
-            <canvas id="canvas" width="431" height="768"></canvas>
-
-            <script src="../scripts/flappy2.js"></script>
-        </div>
-        <div class="scoress">
-            <section id="classement">
-                <div class="game-info">
+            
+            <div class="game-info">
                     <h1><?= $data['gameName'] ?></h1>
                     <!-- L'image du jeu peut être ajoutée ici -->
                     <!-- <img src="chemin/vers/votre/image.jpg" alt="Nom du Jeu"> -->
                 </div>
+
+            <canvas id="canvas" width="431" height="600"></canvas>
+
+            <script src="../scripts/flappy2.js"></script>
+        </div>
+        <div class="scoress">
+            <section id="classement-pg">
+            <div class="score-container">
+                <div id="bestScore"></div>
+                <div id="currentScore"></div>
+            </div>
                 <?php if (count($data['scores']) > 0) : ?>
                     <table border='1'>
                         <tr>
